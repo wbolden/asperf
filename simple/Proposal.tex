@@ -1,0 +1,37 @@
+\documentclass{article}
+\usepackage{fullpage,amsmath}
+
+\title{\texttt{ASPerf}: An ASP Driven Perfect Hash Generator}
+\author{William Bolden, Benjamin Sherman}
+
+\begin{document}
+\maketitle
+
+\section{Overview}
+
+\texttt{ASPerf} will be a perfect hash function generator implemented almost entirely in ASP. A perfect hash function is an injective mapping of integer-value keys to array indices. A minimal perfect hash function accomplishes this with an array (function range) of minimal size. Perfect hash functions are useful when you have a hash table that will never (or very rarely) have keys added, whereas a function that perfectly hashes one set of keys may hit lots of collisions if new keys are introduced. Developers working with more or less permanent hash tables are the ideal users of a perfect hash function generator.
+
+\section{Background}
+
+\texttt{GNU gperf} is the most widely used perfect hash function generator. Given a set of keys, written as C structs, \texttt{gperf} returns a C function that perfectly hashes those objects. Typical perfect hash generation algorithms create a random low collision hash function and then create $2^{nd}$ level hash functions that perfectly partition each bucket. In this way the so called perfect functions that \texttt{gperf} produces actually perform twice the number of steps for looking up many keys.
+
+In contrast, our system will create a constraint satisfaction problem. We will allow ASP the freedom to add terms and adjust constants in the hash function subject to the constraint that the function is injective in the domain of keys and range of array indices.
+
+\section{Ideal System}
+
+Ideally, \texttt{ASPerf} will take a list of keys as input, and will produce code that performs perfect hashing as output. The most sensible way to do this would be a command line tool, or perhaps a piece of library code that runs ASP but talks through C or Python.
+
+\section{Data and Non-ASP Portions}
+
+It may be prudent to find real datasets which people use perfect hash functions for. For the large part of development we plan to use randomly produced data to develop and test \texttt{ASPerf}. We also don't foresee any difficulty in the non-ASP part of the code. Generating the problem instances and turning our produced functions into code will be trivial. The real tricky bit is reasoning about how to make this difficult combinatorial search problem as easy as possible for \texttt{clingo}.
+
+\section{Expected Programming Concepts Used}
+
+\begin{enumerate}
+\item Optimization? We plan to minimize the array size needed to perfect hash keys.
+\item Numerical constraints over large domains? this is basically the whole deal
+\item Beyond NP complexity? We aren't sure yet.
+\item Scripting for custom ground-time functions? Very possible if we move into a bit representation of the problem.
+\end{enumerate}
+
+\end{document}
