@@ -1,7 +1,12 @@
 
-#const corange = 10.
-constant(1..corange).
+#const corange = 100.
+bit(0;1).
+%constant(1..corange).
 %input(1..5).
+
+#const bits=4.
+
+bit_index(0..bits-1).
 
 
 input(X) :- key(X).
@@ -29,11 +34,6 @@ rooted(B) :- rooted(A), edge(A,B).
 % All subdags contain at least one key item if the head of the tree is an operation
 %%%
 
-
-%%%{op(I,xor,V1^V2)} :- edge(I,C1), edge(I,C2), C1!=C2, op(C1,T1,V1), op(C2,T2,V2).
-%%%{op(I,and,V1&V2)} :- edge(I,C1), edge(I,C2), C1!=C2, op(C1,T1,V1), op(C2,T2,V2). 
-%%%{op(I,neg,~V1)}    :- edge(I,C1), unary(I), op(C1,T,V1).
-%%%{op(I,input,V1)}  :- leaf(I), input(V1).
     
 node(I) :- rooted(I).
 binary(I) :- node(I), 2{edge(I,C)}2.
@@ -54,35 +54,57 @@ type(T) :- null_op(T).
 1{op(I, T):null_op(T)}1 :- leaf(I).
     
 
+%%%Create constants
+1 {const_bit(I,B,0..1)} 1 :- op(I,const),bit_index(B).
 
 %side(left;right).
     
 %eval(and,)
-  
-val(K,I,V1&V2) :- op(I,and),edge(I,I1),edge(I,I2),I1 < I2, val(K,I1,V1), val(K,I1,V2).
-val(K,I,V1^V2) :- op(I,xor),edge(I,I1),edge(I,I2),I1 < I2, val(K,I1,V1), val(K,I1,V2).
-val(K,I,~V1) :- op(I,neg),edge(I,I1), val(K,I1,V1).
-val(K,I,V) :- key(K), op(I,const), constant(V).
-val(K,I,K) :- key(K), op(I,key).
 
-hash(K,V) :- val(K,0,V).
+%%%Evaluate the tree, (Key, Id, Bit, Value)
 
-occupied(V) :- hash(K,V).
-collision :- occupied(V), 2 {hash(K,V)}.
 
-:- collision.
+%val(K,I,V1-V2) :- op(I,sub),edge(I,I1),edge(I,I2),I1 < I2, val(K,I1,V1), val(K,I1,V2).
+%val(K,I,V1\V2) :- V2!=0, op(I,mod),edge(I,I1),edge(I,I2),I1 < I2, val(K,I1,V1), val(K,I1,V2).
+%val(K,I,0) :- V2=0, op(I,mod),edge(I,I1),edge(I,I2),I1 < I2, val(K,I1,V1), val(K,I1,V2).
+
+val_bit(K,I,B,V1&V2) :- op(I,and),edge(I,I1),edge(I,I2),I1 < I2, val(K,I1,B,V1), val(K,I1,B,V2).
+val_bit(K,I,B,V1^V2) :- op(I,xor),edge(I,I1),edge(I,I2),I1 < I2, val(K,I1,B,V1), val(K,I1,B,V2).
+val_bit(K,I,B,1-V1) :- op(I,neg),edge(I,I1),val(K,I1,B,V1).
+val_bit(K,I,B,V) :- key(K), op(I,const), const_bit(I,B,V).
+val_bit(K,I,B,V) :- key_bit(K,B,V), op(I,key).
+
+hash(K,B,V) :- val(K,0,B,V).
+
+%occupied(B,V) :- hash(K,B,V).
+%collision :- occupied(V), 2 {hash(K,V)}.
+
+%
     
 %%%collision :- key(K1), key(K2), K1!=K2, hash(K1,V), hash(K2,V).
-%%%collision :- key(K1), key(K2), 0 = #sum {2**B,v}
+    
+%%% Maybe we can use a custom theory progagator for to ignore quagratic cost here
+collision(K1,K2) :- 
+    key(K1), 
+    key(K2), 
+    K1 < K2, 
+    0 = #sum {V*2**B,v1:hash(K1,B,V); -V*2**B,v2:hash(K2,B,V)}.
+:- collision(K1,K2).
+    
+%:- hash(K,V), V >100.
+%:- hash(K,V), V < 0.
+    
+%#minimize{V:node(V)}.
     
 %%% Visualization rules
 
-#show children(I,N) : node(I), N = #count{C:edge(I,C)}.
-#show op_count(I, X) : node(I), X = #count{T:op(I,T),type(T)}.
+%#show children(I,N) : node(I), N = #count{C:edge(I,C)}.
+%#show op_count(I, X) : node(I), X = #count{T:op(I,T),type(T)}.
     
+#show hash/2.
+#show key/1.
 #show edge/2.
 #show op/2.
-#show node/2.
 %#show edge/1.
 %#show op/3.
 %#show cnt/2.
