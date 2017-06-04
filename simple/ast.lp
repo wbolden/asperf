@@ -51,30 +51,26 @@ type(T) :- null_op(T).
 %%%Create constants
 1 {const_bit(I,B,0..1)} 1 :- op(I,const),bit_index(B).
 
-%side(left;right).
-    
-%eval(and,)
 
-%%%Evaluate the tree, (Key, Id, Bit, Value)
+%%%Evaluate the dag, (Key, Id, Bit, Value)
 
-
-%val(K,I,V1-V2) :- op(I,sub),edge(I,I1),edge(I,I2),I1 < I2, val(K,I1,V1), val(K,I1,V2).
-%val(K,I,V1\V2) :- V2!=0, op(I,mod),edge(I,I1),edge(I,I2),I1 < I2, val(K,I1,V1), val(K,I1,V2).
-%val(K,I,0) :- V2=0, op(I,mod),edge(I,I1),edge(I,I2),I1 < I2, val(K,I1,V1), val(K,I1,V2).
+%%% Basic operations (and,xor,neg,const,key)
 
 val_bit(K,I,B,V1&V2) :- 
-    op(I,and),edge(I,I1),
+    op(I,and),
+    edge(I,I1),
     edge(I,I2),
     I1 < I2, 
     val_bit(K,I1,B,V1), 
-    val_bit(K,I1,B,V2).
+    val_bit(K,I2,B,V2).
     
 val_bit(K,I,B,V1^V2) :- 
-    op(I,xor),edge(I,I1),
+    op(I,xor),
+    edge(I,I1),
     edge(I,I2),
     I1 < I2, 
     val_bit(K,I1,B,V1), 
-    val_bit(K,I1,B,V2).
+    val_bit(K,I2,B,V2).
     
 val_bit(K,I,B,1-V1) :- 
     op(I,neg),
@@ -89,6 +85,23 @@ val_bit(K,I,B,V) :-
 val_bit(K,I,B,V) :- 
     key_bit(K,B,V), 
     op(I,key).
+    
+%%% Advanced operations (mul,shl,shr,mod,div,add,sub), need yosys circuits
+    
+%%% Is this the general idea you had for multiply
+%%% idk if what I wrote here works, assume it would
+%%% multiline comment is %* *%
+%*
+val_bit(K,I,B,V) :- 
+    op(I,mul),
+    edge(I,I1),
+    edge(I,I2),
+    I1<I2,
+    val_bit(K,I1,B,V1), 
+    val_bit(K,I2,B,V2),
+    input_signal(I,K,mul,B,V1,V2),
+    output_signal(I,K,B,V).
+*%  
     
 % if there is a node multiplying by 13, set the appropriate bit as input
 %input_signal(I,K,mul13in,B,V1) :- op(I,mul13), edge(I,I2), val(K,I1,B,V1).
