@@ -1,4 +1,4 @@
-import sys, subprocess, json
+import sys, subprocess, json, os
 try:
     width = int(sys.argv[1])
 except:
@@ -7,19 +7,18 @@ except:
     
 verilog_src = \
 """
-module good_adder(a, b, out);
+module mul13(mul13in, mul13out);
     parameter WIDTH = {};
-    input [WIDTH-1:0] a;
-    input [WIDTH-1:0] b; 
-    output [WIDTH-1:0] out;
+    input [WIDTH-1:0] mul13in;
+    output [WIDTH-1:0] mul13out;
     
-    assign out = a + b;
+    assign mul13out = mul13in * 13;
 endmodule
 """.format(width)
 
 yosys_cmd = \
 """
-sudo yosys \
+yosys \
 -p "synth; abc -liberty mycells.lib; clean; write_json tmp.json" \
 -QT -f verilog tmp.v
 """
@@ -28,4 +27,28 @@ outfile = open('tmp.v','w')
 outfile.write(verilog_src)
 outfile.close()
 
-subprocess.call(yosys_cmd,shell=True)
+FNULL = open(os.devnull, 'w')
+subprocess.call(yosys_cmd,shell=True,stdout=FNULL)
+
+modules = json.load(open('tmp.json'))['modules']
+outfile = open('multiplier.lp','w')
+for m in modules:
+    outfile.write('device({}).\n'.format(m))
+    dev = modules[m]
+    for p in dev['ports']:
+        port = dev['ports'][p]
+        outfile.write('device_port_direction({},{},{}).\n'.format(m,p,port['direction']))
+        outfile.write('device_port_width({},{},{}).\n'.format(m,p,len(port['bits'])))
+        for i,b in enumerate(port['bits']):
+            outfile.write('device_port_bit_wire({},{},{},{}).\n'.format(m,p,i,b))
+    for c in dev['cells'].values():
+        con = c['connections']
+        if c['type'] == 'AND':
+            outfile.write('device_gate({},and_gate,({}, {}, {})).\n'.format(m,con['A'][0],con['B'][0],con['Y'][0]))
+        if c['type'] == 'OR':
+            outfile.write('device_gate({},or_gate,({}, {}, {})).\n'.format(m,con['A'][0],con['B'][0],con['Y'][0]))
+        if c['type'] == 'NOT':
+            outfile.write('device_gate({},not_gate,({}, {})).\n'.format(m,con['A'][0],con['Y'][0])) 
+outfile.close()
+os.remove('tmp.v')
+os.remove('tmp.json')
