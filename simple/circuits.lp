@@ -28,5 +28,3 @@ output_signal(I,K,Bit,Value) :-
     signal(I,K,Device,Wire,Value),
     output_port(Port),
     device_port_bit_wire(Device,Port,Bit,Wire).
-
-#show output_signal/4.

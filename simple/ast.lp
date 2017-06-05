@@ -34,8 +34,9 @@ binary(I) :- node(I), 2{edge(I,C)}2.
 unary(I) :- node(I), 1{edge(I,C)}1.
 leaf(I) :- node(I), 0{edge(I,C)}0.
       
-bin_op(xor;and).
-un_op(neg). %un_op(neg,mul13).
+%bin_op(xor;and).
+%un_op(neg;mul13).
+un_op(mul13).
 null_op(const;key).
 
 type(T) :- bin_op(T).
@@ -43,7 +44,7 @@ type(T) :- un_op(T).
 type(T) :- null_op(T).
     
 %%%Choose one operation for each node
-1{op(I, T):bin_op(T)}1 :- binary(I).
+%1{op(I, T):bin_op(T)}1 :- binary(I).
 1{op(I, T):un_op(T)}1 :- unary(I).
 1{op(I, T):null_op(T)}1 :- leaf(I).
     
@@ -104,8 +105,8 @@ val_bit(K,I,B,V) :-
 *%  
     
 % if there is a node multiplying by 13, set the appropriate bit as input
-%input_signal(I,K,mul13in,B,V1) :- op(I,mul13), edge(I,I2), val(K,I1,B,V1).
-    
+input_signal(I,K,mul13in,B,V1) :- op(I,mul13), edge(I,I1), val_bit(K,I1,B,V1).
+val_bit(K,I,B,V) :- output_signal(I,K,B,V).
 
 hash_bit(K,B,V) :- val_bit(K,0,B,V).
 
