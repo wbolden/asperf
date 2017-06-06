@@ -5,15 +5,11 @@ bit(0;1).
 
 bit_index(0..bits-1).
 
-
 id(0..10).
 
- 
 rooted(0).
 rooted(B) :- rooted(A), edge(A,B).
 :- node(B), not rooted(B).
-
-
 
 %%% Each node has 0-2 children and is connected to the root
 %%% Childen have greater ids than their parents
@@ -28,15 +24,15 @@ rooted(B) :- rooted(A), edge(A,B).
 % This is just an optimization and shouldnt affect the final answer (assuming we tell it to find optimal)
 %%%
 
-    
 node(I) :- rooted(I).
 binary(I) :- node(I), 2{edge(I,C)}2.
 unary(I) :- node(I), 1{edge(I,C)}1.
 leaf(I) :- node(I), 0{edge(I,C)}0.
       
-%bin_op(xor;and).
-%un_op(neg;mul13).
-un_op(mul13).
+multiplier(mul13;mul7;mul5).
+        
+bin_op(xor;and).
+un_op(mul13;mul7;mul5).
 null_op(const;key).
 
 type(T) :- bin_op(T).
@@ -44,14 +40,14 @@ type(T) :- un_op(T).
 type(T) :- null_op(T).
     
 %%%Choose one operation for each node
-%1{op(I, T):bin_op(T)}1 :- binary(I).
+
+1{op(I, T):bin_op(T)}1 :- binary(I).
 1{op(I, T):un_op(T)}1 :- unary(I).
 1{op(I, T):null_op(T)}1 :- leaf(I).
     
 
 %%%Create constants
 1 {const_bit(I,B,0..1)} 1 :- op(I,const),bit_index(B).
-
 
 %%%Evaluate the dag, (Key, Id, Bit, Value)
 
@@ -105,15 +101,19 @@ val_bit(K,I,B,V) :-
 *%  
     
 % if there is a node multiplying by 13, set the appropriate bit as input
-input_signal(I,K,mul13in,B,V1) :- op(I,mul13), edge(I,I1), val_bit(K,I1,B,V1).
+
+input_signal(I,K,P,B,V1) :- 
+    op(I,D),
+    edge(I,I1),
+    val_bit(K,I1,B,V1),
+    device_port_direction(D,P,input).
+    
 val_bit(K,I,B,V) :- output_signal(I,K,B,V).
 
 hash_bit(K,B,V) :- val_bit(K,0,B,V).
 
 %occupied(B,V) :- hash(K,B,V).
 %collision :- occupied(V), 2 {hash(K,V)}.
-
-
     
 %%%collision :- key(K1), key(K2), K1!=K2, hash(K1,V), hash(K2,V).
     
@@ -125,8 +125,6 @@ collision(K1,K2) :-
     0 = #sum {V*2**B,v1:hash_bit(K1,B,V); -V*2**B,v2:hash_bit(K2,B,V)}.
     
 :- collision(K1,K2).
-    
-
     
 %#minimize{V:node(V)}.
     

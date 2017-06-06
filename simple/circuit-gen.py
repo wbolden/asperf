@@ -8,12 +8,29 @@ except:
 verilog_src = \
 """
 module mul13(mul13in, mul13out);
-    parameter WIDTH = {};
+    parameter WIDTH = {0};
     input [WIDTH-1:0] mul13in;
     output [WIDTH-1:0] mul13out;
     
     assign mul13out = mul13in * 13;
 endmodule
+
+module mul7(mul7in, mul7out);
+    parameter WIDTH = {0};
+    input [WIDTH-1:0] mul7in;
+    output [WIDTH-1:0] mul7out;
+    
+    assign mul7out = mul7in * 7;
+endmodule
+
+module mul5(mul5in, mul5out);
+    parameter WIDTH = {0};
+    input [WIDTH-1:0] mul5in;
+    output [WIDTH-1:0] mul5out;
+    
+    assign mul5out = mul5in * 5;
+endmodule
+
 """.format(width)
 
 yosys_cmd = \
