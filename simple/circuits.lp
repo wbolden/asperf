@@ -1,6 +1,6 @@
-input_port(Port) :- device_port_direction(Device,Port,input).
+input_port(Port) :- device_port_direction(Device,Port,input,C).
 
-output_port(Port) :- device_port_direction(Device,Port,output).
+output_port(Port) :- device_port_direction(Device,Port,output,C).
 
 port_width(Port,Size) :-
     device_port_width(Device,Port,Size).

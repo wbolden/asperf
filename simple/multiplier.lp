@@ -1,5 +1,556 @@
+device(sub).
+device_port_direction(sub,subin2,input,0).
+device_port_width(sub,subin2,8).
+device_port_bit_wire(sub,subin2,0,10).
+device_port_bit_wire(sub,subin2,1,11).
+device_port_bit_wire(sub,subin2,2,12).
+device_port_bit_wire(sub,subin2,3,13).
+device_port_bit_wire(sub,subin2,4,14).
+device_port_bit_wire(sub,subin2,5,15).
+device_port_bit_wire(sub,subin2,6,16).
+device_port_bit_wire(sub,subin2,7,17).
+device_port_direction(sub,subin1,input,1).
+device_port_width(sub,subin1,8).
+device_port_bit_wire(sub,subin1,0,2).
+device_port_bit_wire(sub,subin1,1,3).
+device_port_bit_wire(sub,subin1,2,4).
+device_port_bit_wire(sub,subin1,3,5).
+device_port_bit_wire(sub,subin1,4,6).
+device_port_bit_wire(sub,subin1,5,7).
+device_port_bit_wire(sub,subin1,6,8).
+device_port_bit_wire(sub,subin1,7,9).
+device_port_direction(sub,subout,output,2).
+device_port_width(sub,subout,8).
+device_port_bit_wire(sub,subout,0,18).
+device_port_bit_wire(sub,subout,1,19).
+device_port_bit_wire(sub,subout,2,20).
+device_port_bit_wire(sub,subout,3,21).
+device_port_bit_wire(sub,subout,4,22).
+device_port_bit_wire(sub,subout,5,23).
+device_port_bit_wire(sub,subout,6,24).
+device_port_bit_wire(sub,subout,7,25).
+device_gate(sub,not_gate,(439, 440)).
+device_gate(sub,and_gate,(351, 349, 441)).
+device_gate(sub,or_gate,(431, 368, 432)).
+device_gate(sub,not_gate,(432, 433)).
+device_gate(sub,or_gate,(433, 426, 434)).
+device_gate(sub,not_gate,(434, 435)).
+device_gate(sub,and_gate,(435, 28, 436)).
+device_gate(sub,not_gate,(436, 437)).
+device_gate(sub,and_gate,(434, 13, 438)).
+device_gate(sub,and_gate,(368, 346, 439)).
+device_gate(sub,and_gate,(314, 14, 315)).
+device_gate(sub,not_gate,(311, 314)).
+device_gate(sub,not_gate,(312, 313)).
+device_gate(sub,and_gate,(311, 29, 312)).
+device_gate(sub,or_gate,(318, 274, 319)).
+device_gate(sub,or_gate,(317, 287, 318)).
+device_gate(sub,and_gate,(267, 250, 317)).
+device_gate(sub,and_gate,(274, 247, 316)).
+device_gate(sub,or_gate,(320, 316, 321)).
+device_gate(sub,not_gate,(319, 320)).
+device_gate(sub,and_gate,(422, 421, 423)).
+device_gate(sub,or_gate,(419, 29, 422)).
+device_gate(sub,or_gate,(430, 428, 431)).
+device_gate(sub,or_gate,(202, 38, 203)).
+device_gate(sub,not_gate,(413, 484)).
+device_gate(sub,not_gate,(438, 485)).
+device_gate(sub,or_gate,(481, 479, 482)).
+device_gate(sub,not_gate,(374, 483)).
+device_gate(sub,and_gate,(487, 453, 488)).
+device_gate(sub,or_gate,(488, 458, 489)).
+device_gate(sub,or_gate,(457, 37, 486)).
+device_gate(sub,and_gate,(486, 452, 487)).
+device_gate(sub,or_gate,(464, 27, 490)).
+device_gate(sub,and_gate,(490, 445, 491)).
+device_gate(sub,or_gate,(211, 192, 212)).
+device_gate(sub,and_gate,(212, 198, 213)).
+device_gate(sub,or_gate,(210, 158, 214)).
+device_gate(sub,and_gate,(195, 214, 215)).
+device_gate(sub,or_gate,(215, 141, 216)).
+device_gate(sub,and_gate,(216, 156, 217)).
+device_gate(sub,or_gate,(217, 213, 218)).
+device_gate(sub,not_gate,(218, 219)).
+device_gate(sub,and_gate,(94, 79, 95)).
+device_gate(sub,not_gate,(93, 94)).
+device_gate(sub,and_gate,(82, 27, 93)).
+device_gate(sub,or_gate,(91, 80, 92)).
+device_gate(sub,and_gate,(98, 74, 99)).
+device_gate(sub,or_gate,(97, 95, 98)).
+device_gate(sub,or_gate,(96, 41, 97)).
+device_gate(sub,and_gate,(83, 12, 96)).
+device_gate(sub,or_gate,(441, 380, 442)).
+device_gate(sub,and_gate,(395, 392, 396)).
+device_gate(sub,and_gate,(396, 31, 397)).
+device_gate(sub,not_gate,(397, 398)).
+device_gate(sub,or_gate,(396, 31, 399)).
+device_gate(sub,or_gate,(391, 368, 392)).
+device_gate(sub,or_gate,(362, 388, 393)).
+device_gate(sub,and_gate,(276, 31, 361)).
+device_gate(sub,or_gate,(359, 300, 360)).
+device_gate(sub,and_gate,(358, 313, 359)).
+device_gate(sub,or_gate,(357, 315, 358)).
+device_gate(sub,and_gate,(356, 323, 357)).
+device_gate(sub,or_gate,(355, 326, 356)).
+device_gate(sub,and_gate,(354, 334, 355)).
+device_gate(sub,or_gate,(353, 336, 354)).
+device_gate(sub,and_gate,(352, 343, 353)).
+device_gate(sub,or_gate,(351, 349, 352)).
+device_gate(sub,or_gate,(289, 236, 290)).
+device_gate(sub,and_gate,(290, 278, 291)).
+device_gate(sub,not_gate,(332, 425)).
+device_gate(sub,not_gate,(423, 424)).
+device_gate(sub,and_gate,(334, 335, 427)).
+device_gate(sub,and_gate,(368, 425, 426)).
+device_gate(sub,or_gate,(427, 353, 429)).
+device_gate(sub,and_gate,(427, 353, 428)).
+device_gate(sub,or_gate,(260, 37, 282)).
+device_gate(sub,and_gate,(282, 257, 283)).
+device_gate(sub,not_gate,(265, 284)).
+device_gate(sub,and_gate,(284, 283, 285)).
+device_gate(sub,or_gate,(285, 261, 286)).
+device_gate(sub,and_gate,(286, 281, 287)).
+device_gate(sub,or_gate,(287, 248, 288)).
+device_gate(sub,and_gate,(288, 279, 289)).
+device_gate(sub,and_gate,(209, 204, 210)).
+device_gate(sub,and_gate,(524, 473, 525)).
+device_gate(sub,not_gate,(524, 526)).
+device_gate(sub,and_gate,(523, 522, 22)).
+device_gate(sub,and_gate,(411, 484, 524)).
+device_gate(sub,or_gate,(521, 479, 522)).
+device_gate(sub,or_gate,(503, 419, 523)).
+device_gate(sub,or_gate,(495, 423, 520)).
+device_gate(sub,and_gate,(520, 472, 521)).
+device_gate(sub,and_gate,(479, 435, 519)).
+device_gate(sub,or_gate,(519, 518, 21)).
+device_gate(sub,or_gate,(92, 13, 130)).
+device_gate(sub,and_gate,(130, 106, 131)).
+device_gate(sub,or_gate,(179, 165, 180)).
+device_gate(sub,and_gate,(180, 178, 181)).
+device_gate(sub,or_gate,(175, 172, 176)).
+device_gate(sub,and_gate,(176, 37, 177)).
+device_gate(sub,or_gate,(137, 117, 178)).
+device_gate(sub,not_gate,(174, 179)).
+device_gate(sub,and_gate,(165, 6, 172)).
+device_gate(sub,and_gate,(270, 237, 271)).
+device_gate(sub,or_gate,(173, 118, 174)).
+device_gate(sub,and_gate,(174, 137, 175)).
+device_gate(sub,and_gate,(122, 121, 123)).
+device_gate(sub,and_gate,(128, 108, 129)).
+device_gate(sub,or_gate,(198, 185, 251)).
+device_gate(sub,or_gate,(249, 248, 250)).
+device_gate(sub,or_gate,(242, 216, 243)).
+device_gate(sub,or_gate,(241, 188, 242)).
+device_gate(sub,or_gate,(244, 12, 245)).
+device_gate(sub,and_gate,(243, 240, 244)).
+device_gate(sub,or_gate,(246, 239, 247)).
+device_gate(sub,not_gate,(243, 246)).
+device_gate(sub,and_gate,(244, 12, 249)).
+device_gate(sub,and_gate,(247, 27, 248)).
+device_gate(sub,not_gate,(141, 142)).
+device_gate(sub,not_gate,(107, 143)).
+device_gate(sub,or_gate,(143, 105, 144)).
+device_gate(sub,and_gate,(123, 11, 145)).
+device_gate(sub,or_gate,(145, 116, 146)).
+device_gate(sub,or_gate,(146, 118, 147)).
+device_gate(sub,and_gate,(147, 124, 148)).
+device_gate(sub,and_gate,(148, 144, 149)).
+device_gate(sub,or_gate,(149, 129, 150)).
+device_gate(sub,and_gate,(150, 137, 151)).
+device_gate(sub,or_gate,(160, 127, 161)).
+device_gate(sub,and_gate,(146, 118, 160)).
+device_gate(sub,and_gate,(156, 13, 157)).
+device_gate(sub,not_gate,(154, 156)).
+device_gate(sub,not_gate,(158, 159)).
+device_gate(sub,or_gate,(157, 155, 158)).
+device_gate(sub,or_gate,(137, 104, 153)).
+device_gate(sub,not_gate,(151, 152)).
+device_gate(sub,and_gate,(154, 28, 155)).
+device_gate(sub,and_gate,(153, 152, 154)).
+device_gate(sub,not_gate,(390, 391)).
+device_gate(sub,or_gate,(389, 388, 390)).
+device_gate(sub,or_gate,(386, 312, 387)).
+device_gate(sub,and_gate,(385, 376, 386)).
+device_gate(sub,and_gate,(359, 300, 389)).
+device_gate(sub,and_gate,(387, 375, 388)).
+device_gate(sub,or_gate,(382, 333, 383)).
+device_gate(sub,and_gate,(381, 335, 382)).
+device_gate(sub,or_gate,(384, 322, 385)).
+device_gate(sub,and_gate,(383, 325, 384)).
+device_gate(sub,not_gate,(325, 326)).
+device_gate(sub,and_gate,(274, 260, 327)).
+device_gate(sub,and_gate,(265, 263, 328)).
+device_gate(sub,or_gate,(328, 285, 329)).
+device_gate(sub,and_gate,(321, 28, 322)).
+device_gate(sub,not_gate,(322, 323)).
+device_gate(sub,or_gate,(321, 28, 324)).
+device_gate(sub,and_gate,(324, 323, 325)).
+device_gate(sub,or_gate,(329, 274, 330)).
+device_gate(sub,not_gate,(330, 331)).
+device_gate(sub,not_gate,(15, 30)).
+device_gate(sub,not_gate,(16, 31)).
+device_gate(sub,not_gate,(17, 26)).
+device_gate(sub,not_gate,(12, 27)).
+device_gate(sub,not_gate,(13, 28)).
+device_gate(sub,not_gate,(14, 29)).
+device_gate(sub,or_gate,(292, 291, 293)).
+device_gate(sub,and_gate,(271, 225, 292)).
+device_gate(sub,not_gate,(294, 295)).
+device_gate(sub,or_gate,(293, 274, 294)).
+device_gate(sub,and_gate,(296, 30, 297)).
+device_gate(sub,or_gate,(295, 277, 296)).
+device_gate(sub,and_gate,(298, 15, 299)).
+device_gate(sub,not_gate,(296, 298)).
+device_gate(sub,not_gate,(203, 301)).
+device_gate(sub,or_gate,(299, 297, 300)).
+device_gate(sub,not_gate,(429, 430)).
+device_gate(sub,or_gate,(498, 410, 499)).
+device_gate(sub,and_gate,(497, 484, 498)).
+device_gate(sub,or_gate,(496, 420, 497)).
+device_gate(sub,and_gate,(495, 423, 496)).
+device_gate(sub,or_gate,(494, 436, 495)).
+device_gate(sub,and_gate,(493, 485, 494)).
+device_gate(sub,or_gate,(492, 465, 493)).
+device_gate(sub,and_gate,(491, 489, 492)).
+device_gate(sub,or_gate,(500, 397, 501)).
+device_gate(sub,and_gate,(499, 400, 500)).
+device_gate(sub,or_gate,(186, 206, 207)).
+device_gate(sub,or_gate,(205, 177, 206)).
+device_gate(sub,or_gate,(208, 170, 209)).
+device_gate(sub,and_gate,(207, 182, 208)).
+device_gate(sub,and_gate,(109, 7, 110)).
+device_gate(sub,and_gate,(200, 15, 202)).
+device_gate(sub,and_gate,(181, 11, 205)).
+device_gate(sub,not_gate,(169, 204)).
+device_gate(sub,not_gate,(105, 106)).
+device_gate(sub,or_gate,(104, 27, 107)).
+device_gate(sub,and_gate,(107, 106, 108)).
+device_gate(sub,or_gate,(98, 68, 109)).
+device_gate(sub,or_gate,(101, 98, 102)).
+device_gate(sub,not_gate,(102, 103)).
+device_gate(sub,or_gate,(103, 99, 104)).
+device_gate(sub,or_gate,(93, 88, 111)).
+device_gate(sub,or_gate,(120, 66, 121)).
+device_gate(sub,and_gate,(113, 10, 120)).
+device_gate(sub,or_gate,(442, 368, 443)).
+device_gate(sub,and_gate,(112, 111, 113)).
+device_gate(sub,and_gate,(210, 158, 211)).
+device_gate(sub,or_gate,(114, 110, 115)).
+device_gate(sub,and_gate,(113, 67, 114)).
+device_gate(sub,not_gate,(6, 117)).
+device_gate(sub,and_gate,(115, 37, 116)).
+device_gate(sub,not_gate,(118, 119)).
+device_gate(sub,and_gate,(117, 10, 118)).
+device_gate(sub,and_gate,(104, 27, 105)).
+device_gate(sub,or_gate,(361, 297, 362)).
+device_gate(sub,not_gate,(362, 363)).
+device_gate(sub,and_gate,(363, 360, 364)).
+device_gate(sub,and_gate,(276, 26, 365)).
+device_gate(sub,or_gate,(365, 32, 366)).
+device_gate(sub,not_gate,(366, 367)).
+device_gate(sub,or_gate,(367, 364, 368)).
+device_gate(sub,and_gate,(368, 276, 369)).
+device_gate(sub,or_gate,(369, 52, 370)).
+device_gate(sub,and_gate,(370, 26, 371)).
+device_gate(sub,and_gate,(450, 446, 451)).
+device_gate(sub,or_gate,(449, 368, 450)).
+device_gate(sub,and_gate,(355, 326, 414)).
+device_gate(sub,or_gate,(414, 384, 415)).
+device_gate(sub,not_gate,(409, 412)).
+device_gate(sub,and_gate,(412, 15, 413)).
+device_gate(sub,or_gate,(340, 274, 341)).
+device_gate(sub,not_gate,(339, 340)).
+device_gate(sub,not_gate,(415, 416)).
+device_gate(sub,or_gate,(416, 368, 417)).
+device_gate(sub,or_gate,(303, 264, 337)).
+device_gate(sub,not_gate,(335, 336)).
+device_gate(sub,or_gate,(338, 265, 339)).
+device_gate(sub,and_gate,(4, 68, 338)).
+device_gate(sub,and_gate,(332, 27, 333)).
+device_gate(sub,or_gate,(331, 327, 332)).
+device_gate(sub,or_gate,(332, 27, 335)).
+device_gate(sub,not_gate,(333, 334)).
+device_gate(sub,not_gate,(11, 37)).
+device_gate(sub,and_gate,(35, 27, 36)).
+device_gate(sub,or_gate,(38, 15, 39)).
+device_gate(sub,or_gate,(16, 17, 38)).
+device_gate(sub,and_gate,(32, 30, 33)).
+device_gate(sub,and_gate,(31, 26, 32)).
+device_gate(sub,and_gate,(34, 28, 35)).
+device_gate(sub,and_gate,(33, 29, 34)).
+device_gate(sub,or_gate,(40, 13, 41)).
+device_gate(sub,or_gate,(39, 14, 40)).
+device_gate(sub,or_gate,(503, 409, 530)).
+device_gate(sub,or_gate,(528, 479, 529)).
+device_gate(sub,or_gate,(527, 525, 528)).
+device_gate(sub,and_gate,(526, 497, 527)).
+device_gate(sub,and_gate,(532, 476, 533)).
+device_gate(sub,or_gate,(499, 400, 532)).
+device_gate(sub,or_gate,(503, 396, 531)).
+device_gate(sub,and_gate,(530, 529, 23)).
+device_gate(sub,and_gate,(534, 531, 24)).
+device_gate(sub,or_gate,(533, 479, 534)).
+device_gate(sub,and_gate,(6, 68, 173)).
+device_gate(sub,not_gate,(239, 240)).
+device_gate(sub,and_gate,(186, 206, 241)).
+device_gate(sub,and_gate,(233, 231, 234)).
+device_gate(sub,not_gate,(234, 235)).
+device_gate(sub,and_gate,(216, 168, 232)).
+device_gate(sub,not_gate,(232, 233)).
+device_gate(sub,and_gate,(234, 13, 238)).
+device_gate(sub,and_gate,(216, 176, 239)).
+device_gate(sub,and_gate,(235, 28, 236)).
+device_gate(sub,not_gate,(236, 237)).
+device_gate(sub,or_gate,(76, 75, 77)).
+device_gate(sub,and_gate,(64, 11, 76)).
+device_gate(sub,and_gate,(78, 65, 79)).
+device_gate(sub,or_gate,(77, 67, 78)).
+device_gate(sub,or_gate,(72, 68, 73)).
+device_gate(sub,or_gate,(71, 42, 72)).
+device_gate(sub,and_gate,(74, 37, 75)).
+device_gate(sub,and_gate,(73, 8, 74)).
+device_gate(sub,and_gate,(72, 46, 81)).
+device_gate(sub,and_gate,(79, 36, 80)).
+device_gate(sub,or_gate,(466, 465, 467)).
+device_gate(sub,and_gate,(444, 12, 466)).
+device_gate(sub,and_gate,(468, 445, 469)).
+device_gate(sub,or_gate,(467, 462, 468)).
+device_gate(sub,not_gate,(443, 463)).
+device_gate(sub,and_gate,(461, 452, 462)).
+device_gate(sub,and_gate,(464, 27, 465)).
+device_gate(sub,or_gate,(463, 439, 464)).
+device_gate(sub,and_gate,(470, 437, 471)).
+device_gate(sub,or_gate,(469, 438, 470)).
+device_gate(sub,and_gate,(167, 12, 170)).
+device_gate(sub,not_gate,(170, 171)).
+device_gate(sub,not_gate,(167, 168)).
+device_gate(sub,and_gate,(168, 27, 169)).
+device_gate(sub,and_gate,(165, 123, 166)).
+device_gate(sub,or_gate,(166, 162, 167)).
+device_gate(sub,and_gate,(131, 163, 164)).
+device_gate(sub,or_gate,(135, 164, 165)).
+device_gate(sub,and_gate,(161, 137, 162)).
+device_gate(sub,or_gate,(148, 144, 163)).
+device_gate(sub,and_gate,(379, 378, 380)).
+device_gate(sub,or_gate,(380, 347, 381)).
+device_gate(sub,and_gate,(377, 343, 378)).
+device_gate(sub,not_gate,(351, 379)).
+device_gate(sub,not_gate,(315, 376)).
+device_gate(sub,or_gate,(346, 37, 377)).
+device_gate(sub,and_gate,(373, 17, 374)).
+device_gate(sub,not_gate,(300, 375)).
+device_gate(sub,not_gate,(371, 372)).
+device_gate(sub,not_gate,(370, 373)).
+device_gate(sub,and_gate,(237, 279, 304)).
+device_gate(sub,not_gate,(304, 305)).
+device_gate(sub,or_gate,(291, 222, 302)).
+device_gate(sub,and_gate,(302, 301, 303)).
+device_gate(sub,or_gate,(307, 306, 308)).
+device_gate(sub,and_gate,(308, 303, 309)).
+device_gate(sub,and_gate,(305, 288, 306)).
+device_gate(sub,and_gate,(304, 269, 307)).
+device_gate(sub,and_gate,(274, 235, 310)).
+device_gate(sub,or_gate,(310, 309, 311)).
+device_gate(sub,and_gate,(508, 505, 19)).
+device_gate(sub,and_gate,(479, 464, 509)).
+device_gate(sub,and_gate,(501, 483, 502)).
+device_gate(sub,or_gate,(502, 371, 503)).
+device_gate(sub,or_gate,(503, 2, 504)).
+device_gate(sub,and_gate,(504, 482, 18)).
+device_gate(sub,or_gate,(503, 457, 505)).
+device_gate(sub,or_gate,(487, 453, 506)).
+device_gate(sub,and_gate,(506, 461, 507)).
+device_gate(sub,or_gate,(507, 479, 508)).
+device_gate(sub,and_gate,(58, 57, 59)).
+device_gate(sub,not_gate,(51, 58)).
+device_gate(sub,or_gate,(56, 11, 57)).
+device_gate(sub,or_gate,(55, 50, 56)).
+device_gate(sub,and_gate,(43, 36, 55)).
+device_gate(sub,not_gate,(49, 54)).
+device_gate(sub,not_gate,(52, 53)).
+device_gate(sub,and_gate,(47, 36, 52)).
+device_gate(sub,or_gate,(60, 47, 61)).
+device_gate(sub,and_gate,(59, 54, 60)).
+device_gate(sub,and_gate,(197, 142, 198)).
+device_gate(sub,or_gate,(198, 139, 199)).
+device_gate(sub,not_gate,(195, 196)).
+device_gate(sub,or_gate,(196, 192, 197)).
+device_gate(sub,or_gate,(139, 14, 194)).
+device_gate(sub,and_gate,(194, 193, 195)).
+device_gate(sub,and_gate,(191, 159, 192)).
+device_gate(sub,not_gate,(155, 193)).
+device_gate(sub,and_gate,(199, 53, 200)).
+device_gate(sub,not_gate,(200, 201)).
+device_gate(sub,and_gate,(264, 10, 265)).
+device_gate(sub,not_gate,(4, 264)).
+device_gate(sub,or_gate,(262, 261, 263)).
+device_gate(sub,and_gate,(256, 11, 262)).
+device_gate(sub,and_gate,(268, 245, 269)).
+device_gate(sub,or_gate,(267, 250, 268)).
+device_gate(sub,and_gate,(266, 257, 267)).
+device_gate(sub,or_gate,(265, 263, 266)).
+device_gate(sub,or_gate,(123, 11, 124)).
+device_gate(sub,or_gate,(115, 37, 125)).
+device_gate(sub,or_gate,(98, 84, 122)).
+device_gate(sub,or_gate,(269, 238, 270)).
+device_gate(sub,or_gate,(127, 116, 128)).
+device_gate(sub,or_gate,(100, 87, 101)).
+device_gate(sub,and_gate,(125, 124, 126)).
+device_gate(sub,and_gate,(126, 119, 127)).
+device_gate(sub,and_gate,(77, 67, 100)).
+device_gate(sub,and_gate,(219, 29, 220)).
+device_gate(sub,and_gate,(201, 30, 221)).
+device_gate(sub,or_gate,(394, 321, 418)).
+device_gate(sub,and_gate,(418, 417, 419)).
+device_gate(sub,not_gate,(448, 449)).
+device_gate(sub,or_gate,(447, 351, 448)).
+device_gate(sub,and_gate,(3, 68, 447)).
+device_gate(sub,or_gate,(394, 350, 446)).
+device_gate(sub,or_gate,(444, 12, 445)).
+device_gate(sub,and_gate,(443, 440, 444)).
+device_gate(sub,not_gate,(3, 350)).
+device_gate(sub,and_gate,(350, 10, 351)).
+device_gate(sub,and_gate,(342, 11, 348)).
+device_gate(sub,or_gate,(348, 347, 349)).
+device_gate(sub,or_gate,(345, 344, 346)).
+device_gate(sub,and_gate,(346, 37, 347)).
+device_gate(sub,and_gate,(274, 4, 344)).
+device_gate(sub,and_gate,(339, 303, 345)).
+device_gate(sub,and_gate,(341, 337, 342)).
+device_gate(sub,or_gate,(342, 11, 343)).
+device_gate(sub,and_gate,(419, 29, 420)).
+device_gate(sub,not_gate,(420, 421)).
+device_gate(sub,not_gate,(8, 48)).
+device_gate(sub,and_gate,(10, 48, 49)).
+device_gate(sub,and_gate,(45, 9, 46)).
+device_gate(sub,and_gate,(46, 37, 47)).
+device_gate(sub,not_gate,(43, 44)).
+device_gate(sub,or_gate,(44, 42, 45)).
+device_gate(sub,or_gate,(41, 12, 42)).
+device_gate(sub,and_gate,(37, 10, 43)).
+device_gate(sub,not_gate,(9, 50)).
+device_gate(sub,and_gate,(11, 50, 51)).
+device_gate(sub,or_gate,(501, 17, 535)).
+device_gate(sub,or_gate,(477, 26, 536)).
+device_gate(sub,and_gate,(536, 370, 537)).
+device_gate(sub,and_gate,(537, 535, 25)).
+device_gate(sub,and_gate,(472, 421, 473)).
+device_gate(sub,or_gate,(471, 424, 472)).
+device_gate(sub,and_gate,(474, 411, 475)).
+device_gate(sub,or_gate,(473, 413, 474)).
+device_gate(sub,and_gate,(476, 398, 477)).
+device_gate(sub,or_gate,(475, 401, 476)).
+device_gate(sub,and_gate,(478, 372, 479)).
+device_gate(sub,or_gate,(477, 374, 478)).
+device_gate(sub,or_gate,(480, 454, 481)).
+device_gate(sub,and_gate,(2, 68, 480)).
+device_gate(sub,or_gate,(230, 216, 231)).
+device_gate(sub,or_gate,(229, 228, 230)).
+device_gate(sub,and_gate,(226, 189, 229)).
+device_gate(sub,and_gate,(227, 208, 228)).
+device_gate(sub,not_gate,(226, 227)).
+device_gate(sub,and_gate,(204, 171, 226)).
+device_gate(sub,or_gate,(224, 220, 225)).
+device_gate(sub,and_gate,(218, 14, 224)).
+device_gate(sub,not_gate,(222, 223)).
+device_gate(sub,or_gate,(221, 220, 222)).
+device_gate(sub,or_gate,(87, 75, 88)).
+device_gate(sub,and_gate,(35, 12, 89)).
+device_gate(sub,and_gate,(85, 65, 86)).
+device_gate(sub,and_gate,(86, 84, 87)).
+device_gate(sub,not_gate,(67, 84)).
+device_gate(sub,or_gate,(74, 37, 85)).
+device_gate(sub,or_gate,(52, 81, 82)).
+device_gate(sub,not_gate,(82, 83)).
+device_gate(sub,and_gate,(89, 88, 90)).
+device_gate(sub,or_gate,(90, 83, 91)).
+device_gate(sub,and_gate,(457, 37, 458)).
+device_gate(sub,and_gate,(451, 11, 459)).
+device_gate(sub,and_gate,(448, 394, 456)).
+device_gate(sub,or_gate,(456, 455, 457)).
+device_gate(sub,not_gate,(453, 454)).
+device_gate(sub,and_gate,(368, 3, 455)).
+device_gate(sub,or_gate,(451, 11, 452)).
+device_gate(sub,or_gate,(2, 68, 453)).
+device_gate(sub,or_gate,(459, 458, 460)).
+device_gate(sub,or_gate,(460, 454, 461)).
+device_gate(sub,not_gate,(403, 405)).
+device_gate(sub,or_gate,(403, 385, 404)).
+device_gate(sub,and_gate,(313, 376, 403)).
+device_gate(sub,and_gate,(368, 311, 402)).
+device_gate(sub,or_gate,(408, 402, 409)).
+device_gate(sub,and_gate,(407, 394, 408)).
+device_gate(sub,and_gate,(406, 404, 407)).
+device_gate(sub,or_gate,(405, 357, 406)).
+device_gate(sub,not_gate,(410, 411)).
+device_gate(sub,and_gate,(409, 30, 410)).
+device_gate(sub,not_gate,(238, 279)).
+device_gate(sub,not_gate,(225, 278)).
+device_gate(sub,and_gate,(274, 219, 277)).
+device_gate(sub,or_gate,(275, 52, 276)).
+device_gate(sub,and_gate,(274, 201, 275)).
+device_gate(sub,or_gate,(273, 203, 274)).
+device_gate(sub,and_gate,(272, 223, 273)).
+device_gate(sub,or_gate,(271, 225, 272)).
+device_gate(sub,and_gate,(280, 245, 281)).
+device_gate(sub,or_gate,(247, 27, 280)).
+device_gate(sub,and_gate,(366, 393, 394)).
+device_gate(sub,or_gate,(394, 296, 395)).
+device_gate(sub,and_gate,(517, 503, 518)).
+device_gate(sub,or_gate,(516, 514, 517)).
+device_gate(sub,and_gate,(513, 469, 514)).
+device_gate(sub,and_gate,(437, 485, 513)).
+device_gate(sub,and_gate,(515, 493, 516)).
+device_gate(sub,not_gate,(513, 515)).
+device_gate(sub,and_gate,(510, 468, 511)).
+device_gate(sub,or_gate,(491, 489, 510)).
+device_gate(sub,or_gate,(512, 509, 20)).
+device_gate(sub,and_gate,(511, 503, 512)).
+device_gate(sub,or_gate,(140, 39, 141)).
+device_gate(sub,and_gate,(399, 398, 400)).
+device_gate(sub,and_gate,(139, 14, 140)).
+device_gate(sub,not_gate,(400, 401)).
+device_gate(sub,or_gate,(69, 49, 70)).
+device_gate(sub,and_gate,(70, 57, 71)).
+device_gate(sub,and_gate,(61, 36, 62)).
+device_gate(sub,and_gate,(62, 10, 63)).
+device_gate(sub,or_gate,(63, 48, 64)).
+device_gate(sub,or_gate,(64, 11, 65)).
+device_gate(sub,not_gate,(7, 66)).
+device_gate(sub,and_gate,(66, 10, 67)).
+device_gate(sub,not_gate,(10, 68)).
+device_gate(sub,or_gate,(51, 47, 69)).
+device_gate(sub,or_gate,(134, 40, 135)).
+device_gate(sub,and_gate,(92, 13, 134)).
+device_gate(sub,not_gate,(97, 112)).
+device_gate(sub,or_gate,(190, 169, 191)).
+device_gate(sub,and_gate,(189, 171, 190)).
+device_gate(sub,not_gate,(5, 185)).
+device_gate(sub,and_gate,(183, 182, 184)).
+device_gate(sub,or_gate,(176, 37, 183)).
+device_gate(sub,or_gate,(181, 11, 182)).
+device_gate(sub,or_gate,(188, 177, 189)).
+device_gate(sub,and_gate,(187, 184, 188)).
+device_gate(sub,not_gate,(186, 187)).
+device_gate(sub,and_gate,(185, 10, 186)).
+device_gate(sub,and_gate,(255, 251, 256)).
+device_gate(sub,or_gate,(256, 11, 257)).
+device_gate(sub,and_gate,(216, 5, 258)).
+device_gate(sub,and_gate,(253, 198, 259)).
+device_gate(sub,and_gate,(5, 68, 252)).
+device_gate(sub,or_gate,(252, 186, 253)).
+device_gate(sub,not_gate,(253, 254)).
+device_gate(sub,or_gate,(254, 216, 255)).
+device_gate(sub,and_gate,(138, 53, 139)).
+device_gate(sub,or_gate,(137, 92, 138)).
+device_gate(sub,and_gate,(136, 133, 137)).
+device_gate(sub,not_gate,(135, 136)).
+device_gate(sub,or_gate,(259, 258, 260)).
+device_gate(sub,and_gate,(260, 37, 261)).
+device_gate(sub,or_gate,(132, 129, 133)).
+device_gate(sub,not_gate,(131, 132)).
 device(mul13).
-device_port_direction(mul13,mul13in,input).
+device_port_direction(mul13,mul13in,input,0).
 device_port_width(mul13,mul13in,8).
 device_port_bit_wire(mul13,mul13in,0,2).
 device_port_bit_wire(mul13,mul13in,1,3).
@@ -9,7 +560,7 @@ device_port_bit_wire(mul13,mul13in,4,6).
 device_port_bit_wire(mul13,mul13in,5,7).
 device_port_bit_wire(mul13,mul13in,6,8).
 device_port_bit_wire(mul13,mul13in,7,9).
-device_port_direction(mul13,mul13out,output).
+device_port_direction(mul13,mul13out,output,1).
 device_port_width(mul13,mul13out,8).
 device_port_bit_wire(mul13,mul13out,0,2).
 device_port_bit_wire(mul13,mul13out,1,3).
@@ -19,17 +570,16 @@ device_port_bit_wire(mul13,mul13out,4,12).
 device_port_bit_wire(mul13,mul13out,5,13).
 device_port_bit_wire(mul13,mul13out,6,14).
 device_port_bit_wire(mul13,mul13out,7,15).
-device_gate(mul13,or_gate,(31, 16, 32)).
-device_gate(mul13,and_gate,(29, 18, 31)).
-device_gate(mul13,not_gate,(6, 34)).
-device_gate(mul13,or_gate,(6, 18, 33)).
-device_gate(mul13,and_gate,(28, 27, 29)).
-device_gate(mul13,or_gate,(5, 21, 28)).
-device_gate(mul13,or_gate,(30, 26, 11)).
-device_gate(mul13,and_gate,(29, 19, 30)).
-device_gate(mul13,and_gate,(35, 33, 36)).
-device_gate(mul13,or_gate,(34, 4, 35)).
-device_gate(mul13,not_gate,(115, 119)).
+device_gate(mul13,and_gate,(70, 73, 76)).
+device_gate(mul13,and_gate,(75, 70, 13)).
+device_gate(mul13,or_gate,(77, 18, 78)).
+device_gate(mul13,and_gate,(55, 34, 77)).
+device_gate(mul13,not_gate,(8, 80)).
+device_gate(mul13,not_gate,(78, 79)).
+device_gate(mul13,and_gate,(8, 34, 82)).
+device_gate(mul13,and_gate,(80, 6, 81)).
+device_gate(mul13,and_gate,(83, 52, 84)).
+device_gate(mul13,or_gate,(82, 81, 83)).
 device_gate(mul13,or_gate,(42, 32, 43)).
 device_gate(mul13,or_gate,(25, 4, 44)).
 device_gate(mul13,or_gate,(40, 28, 41)).
@@ -40,57 +590,78 @@ device_gate(mul13,or_gate,(36, 24, 37)).
 device_gate(mul13,and_gate,(34, 4, 38)).
 device_gate(mul13,and_gate,(44, 2, 45)).
 device_gate(mul13,and_gate,(40, 28, 46)).
-device_gate(mul13,and_gate,(102, 5, 103)).
-device_gate(mul13,or_gate,(83, 7, 102)).
-device_gate(mul13,and_gate,(99, 93, 14)).
-device_gate(mul13,or_gate,(98, 95, 99)).
-device_gate(mul13,or_gate,(100, 88, 101)).
-device_gate(mul13,and_gate,(98, 95, 100)).
-device_gate(mul13,or_gate,(90, 78, 96)).
-device_gate(mul13,or_gate,(94, 68, 95)).
-device_gate(mul13,and_gate,(97, 96, 98)).
-device_gate(mul13,or_gate,(87, 79, 97)).
-device_gate(mul13,and_gate,(49, 43, 12)).
-device_gate(mul13,or_gate,(48, 45, 49)).
-device_gate(mul13,or_gate,(47, 46, 48)).
-device_gate(mul13,and_gate,(36, 24, 47)).
-device_gate(mul13,not_gate,(7, 53)).
-device_gate(mul13,or_gate,(7, 23, 52)).
-device_gate(mul13,or_gate,(50, 21, 51)).
-device_gate(mul13,and_gate,(36, 23, 50)).
-device_gate(mul13,and_gate,(54, 52, 55)).
-device_gate(mul13,or_gate,(53, 5, 54)).
-device_gate(mul13,or_gate,(92, 76, 93)).
-device_gate(mul13,and_gate,(74, 71, 94)).
-device_gate(mul13,and_gate,(90, 78, 91)).
-device_gate(mul13,or_gate,(91, 88, 92)).
-device_gate(mul13,not_gate,(84, 89)).
-device_gate(mul13,and_gate,(85, 89, 90)).
 device_gate(mul13,or_gate,(86, 84, 87)).
 device_gate(mul13,and_gate,(87, 79, 88)).
 device_gate(mul13,or_gate,(83, 52, 85)).
 device_gate(mul13,not_gate,(85, 86)).
-device_gate(mul13,and_gate,(121, 117, 15)).
-device_gate(mul13,and_gate,(63, 3, 64)).
-device_gate(mul13,or_gate,(59, 38, 65)).
-device_gate(mul13,and_gate,(59, 38, 60)).
-device_gate(mul13,or_gate,(60, 56, 61)).
-device_gate(mul13,and_gate,(61, 51, 62)).
+device_gate(mul13,and_gate,(90, 78, 91)).
+device_gate(mul13,or_gate,(91, 88, 92)).
+device_gate(mul13,not_gate,(84, 89)).
+device_gate(mul13,and_gate,(85, 89, 90)).
+device_gate(mul13,or_gate,(92, 76, 93)).
+device_gate(mul13,and_gate,(74, 71, 94)).
 device_gate(mul13,or_gate,(40, 5, 63)).
-device_gate(mul13,and_gate,(55, 33, 56)).
-device_gate(mul13,and_gate,(53, 5, 57)).
-device_gate(mul13,and_gate,(7, 23, 58)).
+device_gate(mul13,and_gate,(61, 51, 62)).
+device_gate(mul13,or_gate,(60, 56, 61)).
+device_gate(mul13,and_gate,(59, 38, 60)).
 device_gate(mul13,or_gate,(58, 57, 59)).
-device_gate(mul13,and_gate,(66, 65, 67)).
-device_gate(mul13,or_gate,(55, 33, 66)).
-device_gate(mul13,or_gate,(68, 62, 69)).
-device_gate(mul13,and_gate,(67, 64, 68)).
-device_gate(mul13,and_gate,(48, 45, 71)).
-device_gate(mul13,or_gate,(69, 43, 70)).
-device_gate(mul13,or_gate,(61, 51, 73)).
-device_gate(mul13,or_gate,(67, 64, 72)).
-device_gate(mul13,or_gate,(74, 71, 75)).
+device_gate(mul13,and_gate,(7, 23, 58)).
+device_gate(mul13,and_gate,(53, 5, 57)).
+device_gate(mul13,and_gate,(55, 33, 56)).
+device_gate(mul13,or_gate,(59, 38, 65)).
+device_gate(mul13,and_gate,(63, 3, 64)).
 device_gate(mul13,and_gate,(73, 72, 74)).
+device_gate(mul13,or_gate,(74, 71, 75)).
+device_gate(mul13,not_gate,(2, 16)).
+device_gate(mul13,not_gate,(4, 18)).
+device_gate(mul13,and_gate,(66, 65, 67)).
+device_gate(mul13,and_gate,(67, 64, 68)).
+device_gate(mul13,or_gate,(68, 62, 69)).
+device_gate(mul13,or_gate,(69, 43, 70)).
+device_gate(mul13,and_gate,(48, 45, 71)).
+device_gate(mul13,or_gate,(67, 64, 72)).
+device_gate(mul13,or_gate,(61, 51, 73)).
+device_gate(mul13,or_gate,(55, 33, 66)).
+device_gate(mul13,and_gate,(121, 117, 15)).
+device_gate(mul13,and_gate,(4, 16, 17)).
+device_gate(mul13,not_gate,(115, 119)).
+device_gate(mul13,and_gate,(93, 96, 118)).
+device_gate(mul13,or_gate,(120, 118, 121)).
+device_gate(mul13,and_gate,(119, 113, 120)).
+device_gate(mul13,and_gate,(112, 103, 115)).
+device_gate(mul13,not_gate,(113, 114)).
+device_gate(mul13,or_gate,(116, 101, 117)).
+device_gate(mul13,or_gate,(115, 114, 116)).
+device_gate(mul13,not_gate,(6, 34)).
+device_gate(mul13,or_gate,(6, 18, 33)).
+device_gate(mul13,or_gate,(31, 16, 32)).
+device_gate(mul13,and_gate,(29, 18, 31)).
+device_gate(mul13,or_gate,(30, 26, 11)).
+device_gate(mul13,and_gate,(29, 19, 30)).
+device_gate(mul13,and_gate,(28, 27, 29)).
+device_gate(mul13,or_gate,(5, 21, 28)).
+device_gate(mul13,and_gate,(35, 33, 36)).
+device_gate(mul13,or_gate,(34, 4, 35)).
+device_gate(mul13,and_gate,(25, 20, 26)).
+device_gate(mul13,or_gate,(23, 3, 27)).
+device_gate(mul13,and_gate,(18, 2, 19)).
+device_gate(mul13,or_gate,(19, 17, 10)).
+device_gate(mul13,not_gate,(19, 20)).
+device_gate(mul13,not_gate,(3, 21)).
+device_gate(mul13,and_gate,(5, 21, 22)).
+device_gate(mul13,not_gate,(5, 23)).
+device_gate(mul13,and_gate,(23, 3, 24)).
+device_gate(mul13,or_gate,(24, 22, 25)).
+device_gate(mul13,and_gate,(97, 96, 98)).
+device_gate(mul13,or_gate,(87, 79, 97)).
+device_gate(mul13,or_gate,(90, 78, 96)).
+device_gate(mul13,or_gate,(94, 68, 95)).
+device_gate(mul13,or_gate,(100, 88, 101)).
+device_gate(mul13,and_gate,(98, 95, 100)).
+device_gate(mul13,and_gate,(99, 93, 14)).
+device_gate(mul13,or_gate,(98, 95, 99)).
+device_gate(mul13,and_gate,(102, 5, 103)).
+device_gate(mul13,or_gate,(83, 7, 102)).
 device_gate(mul13,not_gate,(107, 108)).
 device_gate(mul13,and_gate,(108, 81, 109)).
 device_gate(mul13,not_gate,(109, 110)).
@@ -101,38 +672,1120 @@ device_gate(mul13,and_gate,(9, 53, 106)).
 device_gate(mul13,or_gate,(106, 105, 107)).
 device_gate(mul13,and_gate,(111, 110, 112)).
 device_gate(mul13,or_gate,(112, 103, 113)).
-device_gate(mul13,and_gate,(55, 34, 77)).
-device_gate(mul13,or_gate,(77, 18, 78)).
-device_gate(mul13,and_gate,(75, 70, 13)).
-device_gate(mul13,and_gate,(70, 73, 76)).
-device_gate(mul13,and_gate,(80, 6, 81)).
-device_gate(mul13,and_gate,(8, 34, 82)).
-device_gate(mul13,not_gate,(78, 79)).
-device_gate(mul13,not_gate,(8, 80)).
-device_gate(mul13,or_gate,(82, 81, 83)).
-device_gate(mul13,and_gate,(83, 52, 84)).
-device_gate(mul13,not_gate,(2, 16)).
-device_gate(mul13,not_gate,(4, 18)).
-device_gate(mul13,and_gate,(4, 16, 17)).
-device_gate(mul13,or_gate,(116, 101, 117)).
-device_gate(mul13,or_gate,(115, 114, 116)).
-device_gate(mul13,and_gate,(112, 103, 115)).
-device_gate(mul13,not_gate,(113, 114)).
-device_gate(mul13,or_gate,(120, 118, 121)).
-device_gate(mul13,and_gate,(119, 113, 120)).
-device_gate(mul13,and_gate,(18, 2, 19)).
-device_gate(mul13,or_gate,(19, 17, 10)).
-device_gate(mul13,not_gate,(19, 20)).
-device_gate(mul13,not_gate,(3, 21)).
-device_gate(mul13,and_gate,(5, 21, 22)).
-device_gate(mul13,not_gate,(5, 23)).
-device_gate(mul13,and_gate,(23, 3, 24)).
-device_gate(mul13,or_gate,(24, 22, 25)).
-device_gate(mul13,and_gate,(25, 20, 26)).
-device_gate(mul13,or_gate,(23, 3, 27)).
-device_gate(mul13,and_gate,(93, 96, 118)).
+device_gate(mul13,or_gate,(50, 21, 51)).
+device_gate(mul13,and_gate,(36, 23, 50)).
+device_gate(mul13,not_gate,(7, 53)).
+device_gate(mul13,or_gate,(7, 23, 52)).
+device_gate(mul13,or_gate,(47, 46, 48)).
+device_gate(mul13,and_gate,(36, 24, 47)).
+device_gate(mul13,and_gate,(49, 43, 12)).
+device_gate(mul13,or_gate,(48, 45, 49)).
+device_gate(mul13,and_gate,(54, 52, 55)).
+device_gate(mul13,or_gate,(53, 5, 54)).
+device(mul).
+device_port_direction(mul,mulout,output,0).
+device_port_width(mul,mulout,8).
+device_port_bit_wire(mul,mulout,0,18).
+device_port_bit_wire(mul,mulout,1,19).
+device_port_bit_wire(mul,mulout,2,20).
+device_port_bit_wire(mul,mulout,3,21).
+device_port_bit_wire(mul,mulout,4,22).
+device_port_bit_wire(mul,mulout,5,23).
+device_port_bit_wire(mul,mulout,6,24).
+device_port_bit_wire(mul,mulout,7,25).
+device_port_direction(mul,mulin2,input,1).
+device_port_width(mul,mulin2,8).
+device_port_bit_wire(mul,mulin2,0,10).
+device_port_bit_wire(mul,mulin2,1,11).
+device_port_bit_wire(mul,mulin2,2,12).
+device_port_bit_wire(mul,mulin2,3,13).
+device_port_bit_wire(mul,mulin2,4,14).
+device_port_bit_wire(mul,mulin2,5,15).
+device_port_bit_wire(mul,mulin2,6,16).
+device_port_bit_wire(mul,mulin2,7,17).
+device_port_direction(mul,mulin1,input,2).
+device_port_width(mul,mulin1,8).
+device_port_bit_wire(mul,mulin1,0,2).
+device_port_bit_wire(mul,mulin1,1,3).
+device_port_bit_wire(mul,mulin1,2,4).
+device_port_bit_wire(mul,mulin1,3,5).
+device_port_bit_wire(mul,mulin1,4,6).
+device_port_bit_wire(mul,mulin1,5,7).
+device_port_bit_wire(mul,mulin1,6,8).
+device_port_bit_wire(mul,mulin1,7,9).
+device_gate(mul,and_gate,(253, 198, 259)).
+device_gate(mul,and_gate,(216, 5, 258)).
+device_gate(mul,or_gate,(76, 75, 77)).
+device_gate(mul,and_gate,(64, 11, 76)).
+device_gate(mul,and_gate,(74, 37, 75)).
+device_gate(mul,and_gate,(73, 8, 74)).
+device_gate(mul,or_gate,(72, 68, 73)).
+device_gate(mul,or_gate,(71, 42, 72)).
+device_gate(mul,and_gate,(70, 57, 71)).
+device_gate(mul,or_gate,(69, 49, 70)).
+device_gate(mul,and_gate,(115, 37, 116)).
+device_gate(mul,not_gate,(6, 117)).
+device_gate(mul,and_gate,(113, 67, 114)).
+device_gate(mul,or_gate,(114, 110, 115)).
+device_gate(mul,not_gate,(97, 112)).
+device_gate(mul,and_gate,(112, 111, 113)).
+device_gate(mul,and_gate,(109, 7, 110)).
+device_gate(mul,or_gate,(93, 88, 111)).
+device_gate(mul,and_gate,(508, 505, 19)).
+device_gate(mul,or_gate,(241, 188, 242)).
+device_gate(mul,or_gate,(242, 216, 243)).
+device_gate(mul,not_gate,(239, 240)).
+device_gate(mul,and_gate,(186, 206, 241)).
+device_gate(mul,or_gate,(348, 347, 349)).
+device_gate(mul,or_gate,(246, 239, 247)).
+device_gate(mul,and_gate,(243, 240, 244)).
+device_gate(mul,or_gate,(244, 12, 245)).
+device_gate(mul,and_gate,(339, 303, 345)).
+device_gate(mul,and_gate,(274, 4, 344)).
+device_gate(mul,and_gate,(346, 37, 347)).
+device_gate(mul,and_gate,(139, 14, 140)).
+device_gate(mul,or_gate,(340, 274, 341)).
+device_gate(mul,not_gate,(339, 340)).
+device_gate(mul,or_gate,(342, 11, 343)).
+device_gate(mul,and_gate,(341, 337, 342)).
+device_gate(mul,and_gate,(148, 144, 149)).
+device_gate(mul,and_gate,(11, 50, 51)).
+device_gate(mul,and_gate,(147, 124, 148)).
+device_gate(mul,not_gate,(9, 50)).
+device_gate(mul,and_gate,(411, 484, 524)).
+device_gate(mul,and_gate,(523, 522, 22)).
+device_gate(mul,and_gate,(58, 57, 59)).
+device_gate(mul,not_gate,(170, 171)).
+device_gate(mul,and_gate,(117, 10, 118)).
+device_gate(mul,and_gate,(216, 176, 239)).
+device_gate(mul,not_gate,(118, 119)).
+device_gate(mul,and_gate,(517, 503, 518)).
+device_gate(mul,or_gate,(516, 514, 517)).
+device_gate(mul,or_gate,(519, 518, 21)).
+device_gate(mul,not_gate,(7, 66)).
+device_gate(mul,and_gate,(66, 10, 67)).
+device_gate(mul,or_gate,(63, 48, 64)).
+device_gate(mul,or_gate,(64, 11, 65)).
+device_gate(mul,and_gate,(61, 36, 62)).
+device_gate(mul,and_gate,(62, 10, 63)).
+device_gate(mul,and_gate,(59, 54, 60)).
+device_gate(mul,or_gate,(60, 47, 61)).
+device_gate(mul,and_gate,(520, 472, 521)).
+device_gate(mul,not_gate,(10, 68)).
+device_gate(mul,or_gate,(51, 47, 69)).
+device_gate(mul,and_gate,(78, 65, 79)).
+device_gate(mul,or_gate,(77, 67, 78)).
+device_gate(mul,or_gate,(467, 462, 468)).
+device_gate(mul,and_gate,(468, 445, 469)).
+device_gate(mul,and_gate,(461, 452, 462)).
+device_gate(mul,not_gate,(443, 463)).
+device_gate(mul,or_gate,(459, 458, 460)).
+device_gate(mul,or_gate,(460, 454, 461)).
+device_gate(mul,and_gate,(444, 12, 466)).
+device_gate(mul,or_gate,(466, 465, 467)).
+device_gate(mul,or_gate,(463, 439, 464)).
+device_gate(mul,and_gate,(464, 27, 465)).
+device_gate(mul,and_gate,(274, 201, 275)).
+device_gate(mul,or_gate,(273, 203, 274)).
+device_gate(mul,and_gate,(274, 219, 277)).
+device_gate(mul,or_gate,(275, 52, 276)).
+device_gate(mul,and_gate,(270, 237, 271)).
+device_gate(mul,or_gate,(269, 238, 270)).
+device_gate(mul,and_gate,(272, 223, 273)).
+device_gate(mul,or_gate,(271, 225, 272)).
+device_gate(mul,not_gate,(238, 279)).
+device_gate(mul,not_gate,(225, 278)).
+device_gate(mul,not_gate,(524, 526)).
+device_gate(mul,or_gate,(146, 118, 147)).
+device_gate(mul,or_gate,(145, 116, 146)).
+device_gate(mul,and_gate,(123, 11, 145)).
+device_gate(mul,or_gate,(143, 105, 144)).
+device_gate(mul,not_gate,(107, 143)).
+device_gate(mul,not_gate,(141, 142)).
+device_gate(mul,and_gate,(207, 182, 208)).
+device_gate(mul,or_gate,(208, 170, 209)).
+device_gate(mul,or_gate,(205, 177, 206)).
+device_gate(mul,or_gate,(186, 206, 207)).
+device_gate(mul,not_gate,(169, 204)).
+device_gate(mul,and_gate,(181, 11, 205)).
+device_gate(mul,and_gate,(200, 15, 202)).
+device_gate(mul,or_gate,(202, 38, 203)).
+device_gate(mul,and_gate,(199, 53, 200)).
+device_gate(mul,not_gate,(200, 201)).
+device_gate(mul,and_gate,(359, 300, 389)).
+device_gate(mul,and_gate,(387, 375, 388)).
+device_gate(mul,or_gate,(380, 347, 381)).
+device_gate(mul,and_gate,(379, 378, 380)).
+device_gate(mul,or_gate,(382, 333, 383)).
+device_gate(mul,and_gate,(381, 335, 382)).
+device_gate(mul,or_gate,(384, 322, 385)).
+device_gate(mul,and_gate,(383, 325, 384)).
+device_gate(mul,or_gate,(386, 312, 387)).
+device_gate(mul,and_gate,(385, 376, 386)).
+device_gate(mul,and_gate,(271, 225, 292)).
+device_gate(mul,or_gate,(292, 291, 293)).
+device_gate(mul,or_gate,(289, 236, 290)).
+device_gate(mul,and_gate,(290, 278, 291)).
+device_gate(mul,or_gate,(295, 277, 296)).
+device_gate(mul,and_gate,(296, 30, 297)).
+device_gate(mul,or_gate,(293, 274, 294)).
+device_gate(mul,not_gate,(294, 295)).
+device_gate(mul,not_gate,(296, 298)).
+device_gate(mul,and_gate,(298, 15, 299)).
+device_gate(mul,and_gate,(368, 425, 426)).
+device_gate(mul,and_gate,(334, 335, 427)).
+device_gate(mul,not_gate,(423, 424)).
+device_gate(mul,not_gate,(332, 425)).
+device_gate(mul,or_gate,(419, 29, 422)).
+device_gate(mul,and_gate,(422, 421, 423)).
+device_gate(mul,and_gate,(419, 29, 420)).
+device_gate(mul,not_gate,(420, 421)).
+device_gate(mul,and_gate,(427, 353, 428)).
+device_gate(mul,or_gate,(427, 353, 429)).
+device_gate(mul,or_gate,(477, 26, 536)).
+device_gate(mul,or_gate,(501, 17, 535)).
+device_gate(mul,not_gate,(243, 246)).
+device_gate(mul,and_gate,(342, 11, 348)).
+device_gate(mul,or_gate,(87, 75, 88)).
+device_gate(mul,and_gate,(35, 12, 89)).
+device_gate(mul,and_gate,(470, 437, 471)).
+device_gate(mul,or_gate,(469, 438, 470)).
+device_gate(mul,and_gate,(476, 398, 477)).
+device_gate(mul,or_gate,(475, 401, 476)).
+device_gate(mul,and_gate,(474, 411, 475)).
+device_gate(mul,or_gate,(473, 413, 474)).
+device_gate(mul,and_gate,(79, 36, 80)).
+device_gate(mul,and_gate,(72, 46, 81)).
+device_gate(mul,or_gate,(52, 81, 82)).
+device_gate(mul,not_gate,(82, 83)).
+device_gate(mul,not_gate,(67, 84)).
+device_gate(mul,or_gate,(74, 37, 85)).
+device_gate(mul,and_gate,(85, 65, 86)).
+device_gate(mul,and_gate,(86, 84, 87)).
+device_gate(mul,not_gate,(102, 103)).
+device_gate(mul,or_gate,(101, 98, 102)).
+device_gate(mul,or_gate,(100, 87, 101)).
+device_gate(mul,and_gate,(77, 67, 100)).
+device_gate(mul,or_gate,(104, 27, 107)).
+device_gate(mul,not_gate,(105, 106)).
+device_gate(mul,and_gate,(104, 27, 105)).
+device_gate(mul,or_gate,(103, 99, 104)).
+device_gate(mul,or_gate,(98, 68, 109)).
+device_gate(mul,and_gate,(107, 106, 108)).
+device_gate(mul,and_gate,(247, 27, 248)).
+device_gate(mul,and_gate,(244, 12, 249)).
+device_gate(mul,or_gate,(256, 11, 257)).
+device_gate(mul,and_gate,(255, 251, 256)).
+device_gate(mul,or_gate,(254, 216, 255)).
+device_gate(mul,not_gate,(253, 254)).
+device_gate(mul,or_gate,(252, 186, 253)).
+device_gate(mul,and_gate,(5, 68, 252)).
+device_gate(mul,and_gate,(4, 68, 338)).
+device_gate(mul,or_gate,(338, 265, 339)).
+device_gate(mul,not_gate,(335, 336)).
+device_gate(mul,or_gate,(303, 264, 337)).
+device_gate(mul,not_gate,(333, 334)).
+device_gate(mul,or_gate,(332, 27, 335)).
+device_gate(mul,or_gate,(331, 327, 332)).
+device_gate(mul,and_gate,(332, 27, 333)).
+device_gate(mul,or_gate,(329, 274, 330)).
+device_gate(mul,not_gate,(330, 331)).
+device_gate(mul,and_gate,(479, 435, 519)).
+device_gate(mul,not_gate,(154, 156)).
+device_gate(mul,and_gate,(156, 13, 157)).
+device_gate(mul,or_gate,(157, 155, 158)).
+device_gate(mul,and_gate,(377, 343, 378)).
+device_gate(mul,not_gate,(158, 159)).
+device_gate(mul,or_gate,(495, 423, 520)).
+device_gate(mul,or_gate,(503, 419, 523)).
+device_gate(mul,or_gate,(38, 15, 39)).
+device_gate(mul,or_gate,(16, 17, 38)).
+device_gate(mul,and_gate,(32, 30, 33)).
+device_gate(mul,and_gate,(31, 26, 32)).
+device_gate(mul,not_gate,(16, 31)).
+device_gate(mul,not_gate,(15, 30)).
+device_gate(mul,not_gate,(11, 37)).
+device_gate(mul,and_gate,(35, 27, 36)).
+device_gate(mul,and_gate,(34, 28, 35)).
+device_gate(mul,and_gate,(33, 29, 34)).
+device_gate(mul,and_gate,(368, 346, 439)).
+device_gate(mul,and_gate,(434, 13, 438)).
+device_gate(mul,not_gate,(436, 437)).
+device_gate(mul,and_gate,(435, 28, 436)).
+device_gate(mul,not_gate,(434, 435)).
+device_gate(mul,or_gate,(433, 426, 434)).
+device_gate(mul,not_gate,(432, 433)).
+device_gate(mul,or_gate,(431, 368, 432)).
+device_gate(mul,or_gate,(430, 428, 431)).
+device_gate(mul,not_gate,(429, 430)).
+device_gate(mul,or_gate,(285, 261, 286)).
+device_gate(mul,and_gate,(286, 281, 287)).
+device_gate(mul,not_gate,(265, 284)).
+device_gate(mul,and_gate,(284, 283, 285)).
+device_gate(mul,or_gate,(260, 37, 282)).
+device_gate(mul,and_gate,(282, 257, 283)).
+device_gate(mul,or_gate,(247, 27, 280)).
+device_gate(mul,and_gate,(280, 245, 281)).
+device_gate(mul,or_gate,(287, 248, 288)).
+device_gate(mul,and_gate,(288, 279, 289)).
+device_gate(mul,or_gate,(137, 92, 138)).
+device_gate(mul,and_gate,(138, 53, 139)).
+device_gate(mul,or_gate,(92, 13, 130)).
+device_gate(mul,and_gate,(130, 106, 131)).
+device_gate(mul,not_gate,(131, 132)).
+device_gate(mul,or_gate,(132, 129, 133)).
+device_gate(mul,and_gate,(92, 13, 134)).
+device_gate(mul,or_gate,(134, 40, 135)).
+device_gate(mul,not_gate,(135, 136)).
+device_gate(mul,and_gate,(136, 133, 137)).
+device_gate(mul,and_gate,(212, 198, 213)).
+device_gate(mul,or_gate,(211, 192, 212)).
+device_gate(mul,and_gate,(210, 158, 211)).
+device_gate(mul,and_gate,(209, 204, 210)).
+device_gate(mul,and_gate,(216, 156, 217)).
+device_gate(mul,or_gate,(215, 141, 216)).
+device_gate(mul,and_gate,(195, 214, 215)).
+device_gate(mul,or_gate,(210, 158, 214)).
+device_gate(mul,not_gate,(371, 372)).
+device_gate(mul,not_gate,(370, 373)).
+device_gate(mul,not_gate,(218, 219)).
+device_gate(mul,or_gate,(217, 213, 218)).
+device_gate(mul,not_gate,(315, 376)).
+device_gate(mul,or_gate,(346, 37, 377)).
+device_gate(mul,and_gate,(373, 17, 374)).
+device_gate(mul,not_gate,(300, 375)).
+device_gate(mul,and_gate,(524, 473, 525)).
+device_gate(mul,and_gate,(274, 260, 327)).
+device_gate(mul,not_gate,(325, 326)).
+device_gate(mul,and_gate,(324, 323, 325)).
+device_gate(mul,or_gate,(321, 28, 324)).
+device_gate(mul,not_gate,(322, 323)).
+device_gate(mul,and_gate,(321, 28, 322)).
+device_gate(mul,or_gate,(320, 316, 321)).
+device_gate(mul,not_gate,(319, 320)).
+device_gate(mul,and_gate,(506, 461, 507)).
+device_gate(mul,or_gate,(328, 285, 329)).
+device_gate(mul,and_gate,(265, 263, 328)).
+device_gate(mul,or_gate,(502, 371, 503)).
+device_gate(mul,and_gate,(501, 483, 502)).
+device_gate(mul,or_gate,(396, 31, 399)).
+device_gate(mul,not_gate,(397, 398)).
+device_gate(mul,or_gate,(362, 388, 393)).
+device_gate(mul,or_gate,(391, 368, 392)).
+device_gate(mul,not_gate,(390, 391)).
+device_gate(mul,or_gate,(389, 388, 390)).
+device_gate(mul,and_gate,(396, 31, 397)).
+device_gate(mul,and_gate,(395, 392, 396)).
+device_gate(mul,or_gate,(394, 296, 395)).
+device_gate(mul,and_gate,(366, 393, 394)).
+device_gate(mul,or_gate,(188, 177, 189)).
+device_gate(mul,and_gate,(187, 184, 188)).
+device_gate(mul,or_gate,(176, 37, 183)).
+device_gate(mul,or_gate,(181, 11, 182)).
+device_gate(mul,and_gate,(180, 178, 181)).
+device_gate(mul,or_gate,(179, 165, 180)).
+device_gate(mul,not_gate,(186, 187)).
+device_gate(mul,and_gate,(185, 10, 186)).
+device_gate(mul,not_gate,(5, 185)).
+device_gate(mul,and_gate,(183, 182, 184)).
+device_gate(mul,not_gate,(413, 484)).
+device_gate(mul,not_gate,(438, 485)).
+device_gate(mul,or_gate,(457, 37, 486)).
+device_gate(mul,and_gate,(486, 452, 487)).
+device_gate(mul,and_gate,(2, 68, 480)).
+device_gate(mul,or_gate,(480, 454, 481)).
+device_gate(mul,or_gate,(481, 479, 482)).
+device_gate(mul,not_gate,(374, 483)).
+device_gate(mul,or_gate,(487, 453, 506)).
+device_gate(mul,or_gate,(503, 457, 505)).
+device_gate(mul,and_gate,(504, 482, 18)).
+device_gate(mul,or_gate,(503, 2, 504)).
+device_gate(mul,and_gate,(487, 453, 488)).
+device_gate(mul,or_gate,(488, 458, 489)).
+device_gate(mul,or_gate,(500, 397, 501)).
+device_gate(mul,and_gate,(499, 400, 500)).
+device_gate(mul,not_gate,(93, 94)).
+device_gate(mul,and_gate,(94, 79, 95)).
+device_gate(mul,and_gate,(83, 12, 96)).
+device_gate(mul,or_gate,(96, 41, 97)).
+device_gate(mul,and_gate,(89, 88, 90)).
+device_gate(mul,or_gate,(90, 83, 91)).
+device_gate(mul,or_gate,(91, 80, 92)).
+device_gate(mul,and_gate,(82, 27, 93)).
+device_gate(mul,or_gate,(97, 95, 98)).
+device_gate(mul,and_gate,(98, 74, 99)).
+device_gate(mul,or_gate,(230, 216, 231)).
+device_gate(mul,or_gate,(318, 274, 319)).
+device_gate(mul,or_gate,(160, 127, 161)).
+device_gate(mul,and_gate,(146, 118, 160)).
+device_gate(mul,or_gate,(148, 144, 163)).
+device_gate(mul,and_gate,(161, 137, 162)).
+device_gate(mul,or_gate,(135, 164, 165)).
+device_gate(mul,and_gate,(131, 163, 164)).
+device_gate(mul,or_gate,(166, 162, 167)).
+device_gate(mul,and_gate,(165, 123, 166)).
+device_gate(mul,and_gate,(168, 27, 169)).
+device_gate(mul,not_gate,(167, 168)).
+device_gate(mul,and_gate,(256, 11, 262)).
+device_gate(mul,or_gate,(262, 261, 263)).
+device_gate(mul,not_gate,(4, 264)).
+device_gate(mul,and_gate,(264, 10, 265)).
+device_gate(mul,or_gate,(265, 263, 266)).
+device_gate(mul,and_gate,(266, 257, 267)).
+device_gate(mul,not_gate,(362, 363)).
+device_gate(mul,or_gate,(361, 297, 362)).
+device_gate(mul,and_gate,(276, 31, 361)).
+device_gate(mul,or_gate,(359, 300, 360)).
+device_gate(mul,not_gate,(366, 367)).
+device_gate(mul,or_gate,(365, 32, 366)).
+device_gate(mul,and_gate,(276, 26, 365)).
+device_gate(mul,or_gate,(310, 309, 311)).
+device_gate(mul,and_gate,(368, 276, 369)).
+device_gate(mul,or_gate,(367, 364, 368)).
+device_gate(mul,or_gate,(140, 39, 141)).
+device_gate(mul,and_gate,(479, 464, 509)).
+device_gate(mul,or_gate,(267, 250, 268)).
+device_gate(mul,and_gate,(268, 245, 269)).
+device_gate(mul,or_gate,(507, 479, 508)).
+device_gate(mul,or_gate,(259, 258, 260)).
+device_gate(mul,and_gate,(260, 37, 261)).
+device_gate(mul,not_gate,(8, 48)).
+device_gate(mul,and_gate,(10, 48, 49)).
+device_gate(mul,not_gate,(43, 44)).
+device_gate(mul,or_gate,(44, 42, 45)).
+device_gate(mul,and_gate,(45, 9, 46)).
+device_gate(mul,and_gate,(46, 37, 47)).
+device_gate(mul,or_gate,(39, 14, 40)).
+device_gate(mul,or_gate,(40, 13, 41)).
+device_gate(mul,or_gate,(41, 12, 42)).
+device_gate(mul,and_gate,(37, 10, 43)).
+device_gate(mul,not_gate,(439, 440)).
+device_gate(mul,and_gate,(351, 349, 441)).
+device_gate(mul,or_gate,(441, 380, 442)).
+device_gate(mul,or_gate,(442, 368, 443)).
+device_gate(mul,and_gate,(443, 440, 444)).
+device_gate(mul,or_gate,(444, 12, 445)).
+device_gate(mul,or_gate,(394, 350, 446)).
+device_gate(mul,and_gate,(3, 68, 447)).
+device_gate(mul,or_gate,(447, 351, 448)).
+device_gate(mul,not_gate,(448, 449)).
+device_gate(mul,and_gate,(534, 531, 24)).
+device_gate(mul,or_gate,(533, 479, 534)).
+device_gate(mul,and_gate,(537, 535, 25)).
+device_gate(mul,and_gate,(536, 370, 537)).
+device_gate(mul,and_gate,(363, 360, 364)).
+device_gate(mul,and_gate,(128, 108, 129)).
+device_gate(mul,or_gate,(127, 116, 128)).
+device_gate(mul,or_gate,(115, 37, 125)).
+device_gate(mul,or_gate,(123, 11, 124)).
+device_gate(mul,and_gate,(126, 119, 127)).
+device_gate(mul,and_gate,(125, 124, 126)).
+device_gate(mul,or_gate,(120, 66, 121)).
+device_gate(mul,and_gate,(113, 10, 120)).
+device_gate(mul,and_gate,(122, 121, 123)).
+device_gate(mul,or_gate,(98, 84, 122)).
+device_gate(mul,and_gate,(218, 14, 224)).
+device_gate(mul,or_gate,(224, 220, 225)).
+device_gate(mul,and_gate,(204, 171, 226)).
+device_gate(mul,not_gate,(226, 227)).
+device_gate(mul,and_gate,(219, 29, 220)).
+device_gate(mul,and_gate,(201, 30, 221)).
+device_gate(mul,or_gate,(221, 220, 222)).
+device_gate(mul,not_gate,(222, 223)).
+device_gate(mul,and_gate,(227, 208, 228)).
+device_gate(mul,and_gate,(226, 189, 229)).
+device_gate(mul,or_gate,(317, 287, 318)).
+device_gate(mul,or_gate,(229, 228, 230)).
+device_gate(mul,not_gate,(232, 233)).
+device_gate(mul,and_gate,(216, 168, 232)).
+device_gate(mul,not_gate,(234, 235)).
+device_gate(mul,and_gate,(233, 231, 234)).
+device_gate(mul,not_gate,(236, 237)).
+device_gate(mul,and_gate,(235, 28, 236)).
+device_gate(mul,and_gate,(274, 235, 310)).
+device_gate(mul,and_gate,(234, 13, 238)).
+device_gate(mul,and_gate,(311, 29, 312)).
+device_gate(mul,not_gate,(312, 313)).
+device_gate(mul,not_gate,(311, 314)).
+device_gate(mul,and_gate,(314, 14, 315)).
+device_gate(mul,and_gate,(274, 247, 316)).
+device_gate(mul,and_gate,(267, 250, 317)).
+device_gate(mul,not_gate,(351, 379)).
+device_gate(mul,and_gate,(472, 421, 473)).
+device_gate(mul,or_gate,(471, 424, 472)).
+device_gate(mul,not_gate,(513, 515)).
+device_gate(mul,or_gate,(345, 344, 346)).
+device_gate(mul,or_gate,(369, 52, 370)).
+device_gate(mul,and_gate,(370, 26, 371)).
+device_gate(mul,or_gate,(491, 489, 510)).
+device_gate(mul,and_gate,(510, 468, 511)).
+device_gate(mul,and_gate,(478, 372, 479)).
+device_gate(mul,or_gate,(477, 374, 478)).
+device_gate(mul,and_gate,(437, 485, 513)).
+device_gate(mul,and_gate,(513, 469, 514)).
+device_gate(mul,and_gate,(511, 503, 512)).
+device_gate(mul,or_gate,(512, 509, 20)).
+device_gate(mul,and_gate,(407, 394, 408)).
+device_gate(mul,or_gate,(408, 402, 409)).
+device_gate(mul,or_gate,(403, 385, 404)).
+device_gate(mul,not_gate,(403, 405)).
+device_gate(mul,or_gate,(405, 357, 406)).
+device_gate(mul,and_gate,(406, 404, 407)).
+device_gate(mul,and_gate,(399, 398, 400)).
+device_gate(mul,not_gate,(400, 401)).
+device_gate(mul,and_gate,(368, 311, 402)).
+device_gate(mul,and_gate,(313, 376, 403)).
+device_gate(mul,and_gate,(43, 36, 55)).
+device_gate(mul,not_gate,(49, 54)).
+device_gate(mul,or_gate,(56, 11, 57)).
+device_gate(mul,or_gate,(55, 50, 56)).
+device_gate(mul,or_gate,(137, 117, 178)).
+device_gate(mul,not_gate,(174, 179)).
+device_gate(mul,not_gate,(52, 53)).
+device_gate(mul,and_gate,(47, 36, 52)).
+device_gate(mul,or_gate,(173, 118, 174)).
+device_gate(mul,and_gate,(174, 137, 175)).
+device_gate(mul,or_gate,(175, 172, 176)).
+device_gate(mul,and_gate,(176, 37, 177)).
+device_gate(mul,and_gate,(167, 12, 170)).
+device_gate(mul,not_gate,(51, 58)).
+device_gate(mul,and_gate,(165, 6, 172)).
+device_gate(mul,and_gate,(6, 68, 173)).
+device_gate(mul,and_gate,(451, 11, 459)).
+device_gate(mul,and_gate,(457, 37, 458)).
+device_gate(mul,and_gate,(450, 446, 451)).
+device_gate(mul,or_gate,(449, 368, 450)).
+device_gate(mul,or_gate,(2, 68, 453)).
+device_gate(mul,or_gate,(451, 11, 452)).
+device_gate(mul,and_gate,(368, 3, 455)).
+device_gate(mul,not_gate,(453, 454)).
+device_gate(mul,or_gate,(456, 455, 457)).
+device_gate(mul,and_gate,(448, 394, 456)).
+device_gate(mul,or_gate,(464, 27, 490)).
+device_gate(mul,and_gate,(490, 445, 491)).
+device_gate(mul,and_gate,(491, 489, 492)).
+device_gate(mul,or_gate,(492, 465, 493)).
+device_gate(mul,and_gate,(493, 485, 494)).
+device_gate(mul,or_gate,(494, 436, 495)).
+device_gate(mul,and_gate,(495, 423, 496)).
+device_gate(mul,or_gate,(496, 420, 497)).
+device_gate(mul,and_gate,(497, 484, 498)).
+device_gate(mul,or_gate,(498, 410, 499)).
+device_gate(mul,not_gate,(151, 152)).
+device_gate(mul,or_gate,(137, 104, 153)).
+device_gate(mul,or_gate,(149, 129, 150)).
+device_gate(mul,and_gate,(150, 137, 151)).
+device_gate(mul,or_gate,(198, 139, 199)).
+device_gate(mul,and_gate,(197, 142, 198)).
+device_gate(mul,and_gate,(153, 152, 154)).
+device_gate(mul,and_gate,(154, 28, 155)).
+device_gate(mul,and_gate,(194, 193, 195)).
+device_gate(mul,or_gate,(139, 14, 194)).
+device_gate(mul,or_gate,(196, 192, 197)).
+device_gate(mul,not_gate,(195, 196)).
+device_gate(mul,or_gate,(190, 169, 191)).
+device_gate(mul,and_gate,(189, 171, 190)).
+device_gate(mul,not_gate,(155, 193)).
+device_gate(mul,and_gate,(191, 159, 192)).
+device_gate(mul,or_gate,(353, 336, 354)).
+device_gate(mul,and_gate,(354, 334, 355)).
+device_gate(mul,or_gate,(355, 326, 356)).
+device_gate(mul,and_gate,(356, 323, 357)).
+device_gate(mul,not_gate,(3, 350)).
+device_gate(mul,and_gate,(350, 10, 351)).
+device_gate(mul,or_gate,(351, 349, 352)).
+device_gate(mul,and_gate,(352, 343, 353)).
+device_gate(mul,or_gate,(357, 315, 358)).
+device_gate(mul,and_gate,(358, 313, 359)).
+device_gate(mul,not_gate,(203, 301)).
+device_gate(mul,or_gate,(299, 297, 300)).
+device_gate(mul,and_gate,(302, 301, 303)).
+device_gate(mul,or_gate,(291, 222, 302)).
+device_gate(mul,not_gate,(304, 305)).
+device_gate(mul,and_gate,(237, 279, 304)).
+device_gate(mul,and_gate,(304, 269, 307)).
+device_gate(mul,and_gate,(305, 288, 306)).
+device_gate(mul,and_gate,(308, 303, 309)).
+device_gate(mul,or_gate,(307, 306, 308)).
+device_gate(mul,and_gate,(515, 493, 516)).
+device_gate(mul,or_gate,(416, 368, 417)).
+device_gate(mul,not_gate,(415, 416)).
+device_gate(mul,or_gate,(499, 400, 532)).
+device_gate(mul,and_gate,(532, 476, 533)).
+device_gate(mul,or_gate,(521, 479, 522)).
+device_gate(mul,or_gate,(198, 185, 251)).
+device_gate(mul,and_gate,(418, 417, 419)).
+device_gate(mul,or_gate,(249, 248, 250)).
+device_gate(mul,or_gate,(394, 321, 418)).
+device_gate(mul,or_gate,(414, 384, 415)).
+device_gate(mul,and_gate,(355, 326, 414)).
+device_gate(mul,not_gate,(13, 28)).
+device_gate(mul,not_gate,(14, 29)).
+device_gate(mul,not_gate,(410, 411)).
+device_gate(mul,and_gate,(409, 30, 410)).
+device_gate(mul,and_gate,(412, 15, 413)).
+device_gate(mul,not_gate,(409, 412)).
+device_gate(mul,or_gate,(528, 479, 529)).
+device_gate(mul,or_gate,(503, 409, 530)).
+device_gate(mul,and_gate,(530, 529, 23)).
+device_gate(mul,or_gate,(503, 396, 531)).
+device_gate(mul,not_gate,(17, 26)).
+device_gate(mul,not_gate,(12, 27)).
+device_gate(mul,and_gate,(526, 497, 527)).
+device_gate(mul,or_gate,(527, 525, 528)).
+device(mod).
+device_port_direction(mod,modin1,input,0).
+device_port_width(mod,modin1,8).
+device_port_bit_wire(mod,modin1,0,2).
+device_port_bit_wire(mod,modin1,1,3).
+device_port_bit_wire(mod,modin1,2,4).
+device_port_bit_wire(mod,modin1,3,5).
+device_port_bit_wire(mod,modin1,4,6).
+device_port_bit_wire(mod,modin1,5,7).
+device_port_bit_wire(mod,modin1,6,8).
+device_port_bit_wire(mod,modin1,7,9).
+device_port_direction(mod,modout,output,1).
+device_port_width(mod,modout,8).
+device_port_bit_wire(mod,modout,0,18).
+device_port_bit_wire(mod,modout,1,19).
+device_port_bit_wire(mod,modout,2,20).
+device_port_bit_wire(mod,modout,3,21).
+device_port_bit_wire(mod,modout,4,22).
+device_port_bit_wire(mod,modout,5,23).
+device_port_bit_wire(mod,modout,6,24).
+device_port_bit_wire(mod,modout,7,25).
+device_port_direction(mod,modin2,input,2).
+device_port_width(mod,modin2,8).
+device_port_bit_wire(mod,modin2,0,10).
+device_port_bit_wire(mod,modin2,1,11).
+device_port_bit_wire(mod,modin2,2,12).
+device_port_bit_wire(mod,modin2,3,13).
+device_port_bit_wire(mod,modin2,4,14).
+device_port_bit_wire(mod,modin2,5,15).
+device_port_bit_wire(mod,modin2,6,16).
+device_port_bit_wire(mod,modin2,7,17).
+device_gate(mod,not_gate,(69, 70)).
+device_gate(mod,and_gate,(37, 68, 69)).
+device_gate(mod,and_gate,(429, 186, 503)).
+device_gate(mod,or_gate,(61, 51, 62)).
+device_gate(mod,not_gate,(60, 61)).
+device_gate(mod,or_gate,(59, 37, 60)).
+device_gate(mod,or_gate,(58, 56, 59)).
+device_gate(mod,and_gate,(62, 13, 67)).
+device_gate(mod,not_gate,(65, 66)).
+device_gate(mod,and_gate,(63, 64, 65)).
+device_gate(mod,not_gate,(62, 63)).
+device_gate(mod,and_gate,(406, 351, 412)).
+device_gate(mod,or_gate,(412, 411, 413)).
+device_gate(mod,or_gate,(418, 416, 419)).
+device_gate(mod,or_gate,(128, 88, 150)).
+device_gate(mod,and_gate,(150, 97, 151)).
+device_gate(mod,and_gate,(148, 123, 18)).
+device_gate(mod,or_gate,(147, 92, 149)).
+device_gate(mod,or_gate,(145, 146, 147)).
+device_gate(mod,or_gate,(147, 2, 148)).
+device_gate(mod,or_gate,(142, 143, 144)).
+device_gate(mod,and_gate,(144, 124, 145)).
+device_gate(mod,not_gate,(353, 354)).
+device_gate(mod,and_gate,(270, 10, 271)).
+device_gate(mod,or_gate,(355, 192, 356)).
+device_gate(mod,not_gate,(322, 357)).
+device_gate(mod,and_gate,(334, 11, 358)).
+device_gate(mod,or_gate,(358, 330, 359)).
+device_gate(mod,or_gate,(151, 120, 152)).
+device_gate(mod,and_gate,(152, 149, 19)).
+device_gate(mod,and_gate,(292, 14, 293)).
+device_gate(mod,and_gate,(291, 207, 292)).
+device_gate(mod,not_gate,(288, 289)).
+device_gate(mod,or_gate,(287, 194, 288)).
+device_gate(mod,or_gate,(290, 245, 291)).
+device_gate(mod,and_gate,(289, 286, 290)).
+device_gate(mod,not_gate,(284, 285)).
+device_gate(mod,and_gate,(283, 259, 284)).
+device_gate(mod,and_gate,(245, 13, 287)).
+device_gate(mod,or_gate,(285, 282, 286)).
+device_gate(mod,or_gate,(210, 11, 211)).
+device_gate(mod,not_gate,(205, 212)).
+device_gate(mod,and_gate,(197, 191, 209)).
+device_gate(mod,or_gate,(209, 204, 210)).
+device_gate(mod,not_gate,(206, 207)).
+device_gate(mod,not_gate,(203, 208)).
+device_gate(mod,and_gate,(11, 204, 205)).
+device_gate(mod,and_gate,(201, 191, 206)).
+device_gate(mod,not_gate,(391, 432)).
+device_gate(mod,or_gate,(400, 101, 433)).
+device_gate(mod,and_gate,(266, 10, 273)).
+device_gate(mod,and_gate,(212, 211, 213)).
+device_gate(mod,and_gate,(213, 208, 214)).
+device_gate(mod,and_gate,(380, 361, 381)).
+device_gate(mod,not_gate,(379, 380)).
+device_gate(mod,and_gate,(357, 324, 379)).
+device_gate(mod,or_gate,(377, 373, 378)).
+device_gate(mod,and_gate,(371, 14, 377)).
+device_gate(mod,not_gate,(375, 376)).
+device_gate(mod,or_gate,(374, 373, 375)).
+device_gate(mod,and_gate,(354, 185, 374)).
+device_gate(mod,or_gate,(407, 369, 408)).
+device_gate(mod,or_gate,(382, 381, 383)).
+device_gate(mod,and_gate,(379, 342, 382)).
+device_gate(mod,or_gate,(409, 11, 410)).
+device_gate(mod,and_gate,(369, 5, 411)).
+device_gate(mod,not_gate,(483, 52)).
+device_gate(mod,and_gate,(49, 101, 483)).
+device_gate(mod,or_gate,(482, 478, 49)).
+device_gate(mod,not_gate,(481, 482)).
+device_gate(mod,and_gate,(451, 15, 452)).
+device_gate(mod,or_gate,(452, 450, 453)).
+device_gate(mod,not_gate,(53, 484)).
+device_gate(mod,or_gate,(49, 101, 53)).
+device_gate(mod,not_gate,(447, 448)).
+device_gate(mod,or_gate,(448, 430, 449)).
+device_gate(mod,and_gate,(449, 185, 450)).
+device_gate(mod,not_gate,(449, 451)).
+device_gate(mod,and_gate,(443, 431, 444)).
+device_gate(mod,and_gate,(424, 378, 445)).
+device_gate(mod,or_gate,(445, 444, 446)).
+device_gate(mod,or_gate,(446, 427, 447)).
+device_gate(mod,or_gate,(438, 414, 439)).
+device_gate(mod,or_gate,(136, 47, 164)).
+device_gate(mod,and_gate,(232, 191, 233)).
+device_gate(mod,and_gate,(437, 436, 438)).
+device_gate(mod,and_gate,(530, 115, 141)).
+device_gate(mod,or_gate,(116, 117, 118)).
+device_gate(mod,and_gate,(114, 115, 116)).
+device_gate(mod,or_gate,(112, 113, 114)).
+device_gate(mod,and_gate,(111, 27, 112)).
+device_gate(mod,or_gate,(110, 30, 111)).
+device_gate(mod,and_gate,(109, 45, 110)).
+device_gate(mod,or_gate,(108, 48, 109)).
+device_gate(mod,and_gate,(107, 66, 108)).
+device_gate(mod,and_gate,(2, 81, 121)).
+device_gate(mod,and_gate,(118, 119, 120)).
+device_gate(mod,or_gate,(175, 186, 530)).
+device_gate(mod,not_gate,(258, 259)).
+device_gate(mod,and_gate,(257, 101, 258)).
+device_gate(mod,and_gate,(260, 259, 261)).
+device_gate(mod,or_gate,(257, 101, 260)).
+device_gate(mod,or_gate,(254, 251, 255)).
+device_gate(mod,or_gate,(253, 240, 254)).
+device_gate(mod,or_gate,(256, 252, 257)).
+device_gate(mod,not_gate,(255, 256)).
+device_gate(mod,and_gate,(262, 7, 263)).
+device_gate(mod,or_gate,(251, 81, 262)).
+device_gate(mod,and_gate,(168, 110, 169)).
+device_gate(mod,and_gate,(27, 125, 168)).
+device_gate(mod,and_gate,(281, 261, 282)).
+device_gate(mod,or_gate,(163, 162, 21)).
+device_gate(mod,and_gate,(120, 63, 163)).
+device_gate(mod,and_gate,(161, 147, 162)).
+device_gate(mod,and_gate,(167, 166, 22)).
+device_gate(mod,or_gate,(147, 42, 167)).
+device_gate(mod,or_gate,(165, 120, 166)).
+device_gate(mod,and_gate,(164, 109, 165)).
+device_gate(mod,not_gate,(339, 340)).
+device_gate(mod,and_gate,(340, 337, 341)).
+device_gate(mod,not_gate,(5, 338)).
+device_gate(mod,and_gate,(338, 10, 339)).
+device_gate(mod,or_gate,(329, 93, 336)).
+device_gate(mod,and_gate,(336, 335, 337)).
+device_gate(mod,and_gate,(333, 331, 334)).
+device_gate(mod,or_gate,(334, 11, 335)).
+device_gate(mod,or_gate,(240, 228, 241)).
+device_gate(mod,and_gate,(239, 237, 240)).
+device_gate(mod,and_gate,(238, 219, 239)).
+device_gate(mod,or_gate,(227, 93, 238)).
+device_gate(mod,not_gate,(221, 237)).
+device_gate(mod,not_gate,(235, 236)).
+device_gate(mod,or_gate,(206, 234, 235)).
+device_gate(mod,and_gate,(342, 324, 343)).
+device_gate(mod,and_gate,(435, 410, 436)).
+device_gate(mod,and_gate,(353, 15, 355)).
+device_gate(mod,and_gate,(501, 453, 524)).
+device_gate(mod,or_gate,(524, 523, 525)).
+device_gate(mod,or_gate,(34, 474, 520)).
+device_gate(mod,and_gate,(520, 513, 521)).
+device_gate(mod,or_gate,(521, 465, 522)).
+device_gate(mod,and_gate,(522, 512, 523)).
+device_gate(mod,or_gate,(74, 494, 517)).
+device_gate(mod,and_gate,(517, 53, 518)).
+device_gate(mod,or_gate,(518, 483, 519)).
+device_gate(mod,and_gate,(519, 477, 34)).
+device_gate(mod,or_gate,(54, 55, 57)).
+device_gate(mod,not_gate,(57, 58)).
+device_gate(mod,and_gate,(52, 53, 54)).
+device_gate(mod,and_gate,(54, 55, 56)).
+device_gate(mod,not_gate,(49, 50)).
+device_gate(mod,and_gate,(37, 50, 51)).
+device_gate(mod,and_gate,(46, 45, 47)).
+device_gate(mod,not_gate,(47, 48)).
+device_gate(mod,not_gate,(44, 45)).
+device_gate(mod,or_gate,(42, 43, 46)).
+device_gate(mod,or_gate,(503, 450, 504)).
+device_gate(mod,or_gate,(361, 323, 362)).
+device_gate(mod,and_gate,(362, 357, 363)).
+device_gate(mod,and_gate,(140, 141, 142)).
+device_gate(mod,or_gate,(139, 26, 140)).
+device_gate(mod,and_gate,(132, 130, 133)).
+device_gate(mod,and_gate,(131, 78, 132)).
+device_gate(mod,and_gate,(134, 126, 135)).
+device_gate(mod,or_gate,(133, 102, 134)).
+device_gate(mod,and_gate,(136, 47, 137)).
+device_gate(mod,or_gate,(135, 65, 136)).
+device_gate(mod,and_gate,(138, 125, 139)).
+device_gate(mod,or_gate,(137, 44, 138)).
+device_gate(mod,and_gate,(301, 297, 302)).
+device_gate(mod,or_gate,(302, 282, 303)).
+device_gate(mod,not_gate,(260, 296)).
+device_gate(mod,or_gate,(296, 258, 297)).
+device_gate(mod,or_gate,(293, 193, 294)).
+device_gate(mod,not_gate,(294, 295)).
+device_gate(mod,or_gate,(299, 271, 300)).
+device_gate(mod,and_gate,(300, 277, 301)).
+device_gate(mod,and_gate,(276, 11, 298)).
+device_gate(mod,or_gate,(298, 269, 299)).
+device_gate(mod,not_gate,(197, 198)).
+device_gate(mod,and_gate,(93, 10, 197)).
+device_gate(mod,or_gate,(195, 12, 196)).
+device_gate(mod,or_gate,(194, 13, 195)).
+device_gate(mod,not_gate,(8, 202)).
+device_gate(mod,and_gate,(200, 93, 201)).
+device_gate(mod,and_gate,(199, 9, 200)).
+device_gate(mod,or_gate,(198, 196, 199)).
+device_gate(mod,not_gate,(9, 204)).
+device_gate(mod,and_gate,(10, 202, 203)).
+device_gate(mod,and_gate,(348, 367, 368)).
+device_gate(mod,or_gate,(368, 294, 369)).
+device_gate(mod,and_gate,(369, 309, 370)).
+device_gate(mod,or_gate,(370, 366, 371)).
+device_gate(mod,and_gate,(363, 311, 364)).
+device_gate(mod,or_gate,(364, 345, 365)).
+device_gate(mod,and_gate,(365, 351, 366)).
+device_gate(mod,or_gate,(363, 311, 367)).
+device_gate(mod,not_gate,(371, 372)).
+device_gate(mod,and_gate,(372, 43, 373)).
+device_gate(mod,and_gate,(421, 398, 422)).
+device_gate(mod,or_gate,(339, 359, 360)).
+device_gate(mod,and_gate,(535, 533, 536)).
+device_gate(mod,and_gate,(360, 335, 361)).
+device_gate(mod,and_gate,(536, 39, 537)).
+device_gate(mod,and_gate,(242, 241, 243)).
+device_gate(mod,and_gate,(190, 12, 242)).
+device_gate(mod,not_gate,(4, 417)).
+device_gate(mod,and_gate,(299, 271, 313)).
+device_gate(mod,not_gate,(311, 312)).
+device_gate(mod,or_gate,(310, 308, 311)).
+device_gate(mod,and_gate,(309, 13, 310)).
+device_gate(mod,not_gate,(307, 309)).
+device_gate(mod,and_gate,(307, 64, 308)).
+device_gate(mod,and_gate,(306, 305, 307)).
+device_gate(mod,or_gate,(290, 257, 306)).
+device_gate(mod,not_gate,(304, 305)).
+device_gate(mod,and_gate,(303, 290, 304)).
+device_gate(mod,and_gate,(413, 93, 414)).
+device_gate(mod,or_gate,(420, 403, 421)).
+device_gate(mod,and_gate,(419, 410, 420)).
+device_gate(mod,or_gate,(488, 427, 489)).
+device_gate(mod,and_gate,(489, 485, 490)).
+device_gate(mod,or_gate,(490, 11, 491)).
+device_gate(mod,and_gate,(427, 4, 492)).
+device_gate(mod,and_gate,(487, 456, 493)).
+device_gate(mod,or_gate,(341, 330, 342)).
+device_gate(mod,and_gate,(68, 93, 494)).
+device_gate(mod,and_gate,(490, 11, 495)).
+device_gate(mod,or_gate,(495, 494, 72)).
+device_gate(mod,not_gate,(3, 79)).
+device_gate(mod,and_gate,(225, 200, 234)).
+device_gate(mod,or_gate,(493, 492, 68)).
+device_gate(mod,and_gate,(425, 376, 426)).
+device_gate(mod,or_gate,(426, 356, 427)).
+device_gate(mod,and_gate,(423, 390, 424)).
+device_gate(mod,or_gate,(424, 378, 425)).
+device_gate(mod,and_gate,(427, 372, 430)).
+device_gate(mod,not_gate,(378, 431)).
+device_gate(mod,and_gate,(427, 354, 428)).
+device_gate(mod,or_gate,(428, 206, 429)).
+device_gate(mod,and_gate,(105, 78, 106)).
+device_gate(mod,or_gate,(106, 67, 107)).
+device_gate(mod,not_gate,(76, 99)).
+device_gate(mod,or_gate,(99, 69, 100)).
+device_gate(mod,or_gate,(96, 89, 97)).
+device_gate(mod,and_gate,(97, 87, 98)).
+device_gate(mod,or_gate,(103, 102, 104)).
+device_gate(mod,or_gate,(104, 98, 105)).
+device_gate(mod,and_gate,(100, 101, 102)).
+device_gate(mod,and_gate,(77, 12, 103)).
+device_gate(mod,and_gate,(28, 185, 26)).
+device_gate(mod,and_gate,(235, 101, 246)).
+device_gate(mod,not_gate,(246, 247)).
+device_gate(mod,or_gate,(243, 236, 244)).
+device_gate(mod,or_gate,(244, 233, 245)).
+device_gate(mod,or_gate,(249, 195, 250)).
+device_gate(mod,or_gate,(250, 248, 251)).
+device_gate(mod,and_gate,(247, 232, 248)).
+device_gate(mod,and_gate,(236, 12, 249)).
+device_gate(mod,and_gate,(251, 227, 252)).
+device_gate(mod,and_gate,(230, 221, 253)).
+device_gate(mod,not_gate,(13, 64)).
+device_gate(mod,not_gate,(12, 101)).
+device_gate(mod,and_gate,(177, 114, 178)).
+device_gate(mod,or_gate,(178, 120, 179)).
+device_gate(mod,or_gate,(147, 175, 176)).
+device_gate(mod,or_gate,(140, 141, 177)).
+device_gate(mod,or_gate,(147, 28, 174)).
+device_gate(mod,and_gate,(174, 173, 23)).
+device_gate(mod,or_gate,(171, 169, 172)).
+device_gate(mod,or_gate,(172, 120, 173)).
+device_gate(mod,not_gate,(168, 170)).
+device_gate(mod,and_gate,(170, 138, 171)).
+device_gate(mod,and_gate,(266, 221, 267)).
+device_gate(mod,and_gate,(265, 264, 266)).
+device_gate(mod,not_gate,(250, 265)).
+device_gate(mod,or_gate,(246, 241, 264)).
+device_gate(mod,and_gate,(231, 219, 232)).
+device_gate(mod,not_gate,(6, 270)).
+device_gate(mod,and_gate,(268, 93, 269)).
+device_gate(mod,or_gate,(267, 263, 268)).
+device_gate(mod,and_gate,(227, 93, 228)).
+device_gate(mod,and_gate,(218, 11, 229)).
+device_gate(mod,or_gate,(229, 228, 230)).
+device_gate(mod,or_gate,(230, 221, 231)).
+device_gate(mod,and_gate,(223, 211, 224)).
+device_gate(mod,or_gate,(224, 196, 225)).
+device_gate(mod,or_gate,(225, 81, 226)).
+device_gate(mod,and_gate,(226, 8, 227)).
+device_gate(mod,not_gate,(271, 272)).
+device_gate(mod,or_gate,(501, 453, 502)).
+device_gate(mod,and_gate,(500, 466, 501)).
+device_gate(mod,or_gate,(351, 338, 404)).
+device_gate(mod,or_gate,(71, 72, 496)).
+device_gate(mod,and_gate,(79, 10, 71)).
+device_gate(mod,or_gate,(55, 484, 497)).
+device_gate(mod,and_gate,(496, 491, 55)).
+device_gate(mod,or_gate,(31, 32, 498)).
+device_gate(mod,and_gate,(497, 52, 31)).
+device_gate(mod,or_gate,(499, 468, 500)).
+device_gate(mod,and_gate,(498, 475, 499)).
+device_gate(mod,and_gate,(5, 81, 405)).
+device_gate(mod,or_gate,(405, 339, 406)).
+device_gate(mod,not_gate,(28, 29)).
+device_gate(mod,not_gate,(26, 27)).
+device_gate(mod,and_gate,(31, 32, 33)).
+device_gate(mod,and_gate,(29, 15, 30)).
+device_gate(mod,not_gate,(35, 36)).
+device_gate(mod,or_gate,(33, 34, 35)).
+device_gate(mod,or_gate,(39, 40, 41)).
+device_gate(mod,or_gate,(36, 37, 38)).
+device_gate(mod,and_gate,(42, 43, 44)).
+device_gate(mod,and_gate,(41, 38, 42)).
+device_gate(mod,and_gate,(408, 404, 409)).
+device_gate(mod,not_gate,(16, 186)).
+device_gate(mod,and_gate,(186, 181, 187)).
+device_gate(mod,and_gate,(187, 185, 188)).
+device_gate(mod,and_gate,(188, 43, 189)).
+device_gate(mod,and_gate,(189, 64, 190)).
+device_gate(mod,and_gate,(190, 101, 191)).
+device_gate(mod,not_gate,(11, 93)).
+device_gate(mod,or_gate,(16, 17, 192)).
+device_gate(mod,or_gate,(192, 15, 193)).
+device_gate(mod,or_gate,(193, 14, 194)).
+device_gate(mod,or_gate,(394, 341, 395)).
+device_gate(mod,and_gate,(339, 359, 394)).
+device_gate(mod,and_gate,(396, 393, 397)).
+device_gate(mod,or_gate,(395, 369, 396)).
+device_gate(mod,not_gate,(396, 399)).
+device_gate(mod,or_gate,(397, 12, 398)).
+device_gate(mod,and_gate,(400, 101, 401)).
+device_gate(mod,or_gate,(399, 392, 400)).
+device_gate(mod,or_gate,(402, 401, 403)).
+device_gate(mod,and_gate,(397, 12, 402)).
+device_gate(mod,and_gate,(321, 101, 322)).
+device_gate(mod,and_gate,(320, 12, 323)).
+device_gate(mod,or_gate,(288, 317, 318)).
+device_gate(mod,and_gate,(318, 276, 319)).
+device_gate(mod,or_gate,(319, 315, 320)).
+device_gate(mod,not_gate,(320, 321)).
+device_gate(mod,or_gate,(313, 280, 314)).
+device_gate(mod,and_gate,(314, 290, 315)).
+device_gate(mod,or_gate,(301, 297, 316)).
+device_gate(mod,and_gate,(284, 316, 317)).
+device_gate(mod,and_gate,(529, 527, 175)).
+device_gate(mod,not_gate,(472, 473)).
+device_gate(mod,or_gate,(471, 427, 472)).
+device_gate(mod,or_gate,(39, 449, 529)).
+device_gate(mod,and_gate,(427, 400, 469)).
+device_gate(mod,and_gate,(467, 14, 468)).
+device_gate(mod,or_gate,(470, 440, 471)).
+device_gate(mod,and_gate,(420, 403, 470)).
+device_gate(mod,and_gate,(464, 43, 465)).
+device_gate(mod,or_gate,(463, 462, 464)).
+device_gate(mod,not_gate,(464, 467)).
+device_gate(mod,not_gate,(465, 466)).
+device_gate(mod,and_gate,(466, 513, 532)).
+device_gate(mod,and_gate,(508, 528, 39)).
+device_gate(mod,or_gate,(504, 523, 528)).
+device_gate(mod,not_gate,(389, 390)).
+device_gate(mod,or_gate,(532, 520, 533)).
+device_gate(mod,and_gate,(387, 13, 391)).
+device_gate(mod,not_gate,(487, 488)).
+device_gate(mod,not_gate,(387, 388)).
+device_gate(mod,and_gate,(388, 64, 389)).
+device_gate(mod,not_gate,(385, 386)).
+device_gate(mod,and_gate,(386, 384, 387)).
+device_gate(mod,not_gate,(141, 113)).
+device_gate(mod,or_gate,(290, 270, 331)).
+device_gate(mod,and_gate,(4, 81, 486)).
+device_gate(mod,and_gate,(329, 93, 330)).
+device_gate(mod,or_gate,(456, 417, 485)).
+device_gate(mod,and_gate,(37, 464, 531)).
+device_gate(mod,or_gate,(95, 94, 96)).
+device_gate(mod,and_gate,(86, 11, 95)).
+device_gate(mod,and_gate,(83, 39, 91)).
+device_gate(mod,and_gate,(37, 3, 90)).
+device_gate(mod,and_gate,(92, 93, 94)).
+device_gate(mod,or_gate,(91, 90, 92)).
+device_gate(mod,or_gate,(86, 11, 87)).
+device_gate(mod,and_gate,(85, 80, 86)).
+device_gate(mod,not_gate,(88, 89)).
+device_gate(mod,or_gate,(2, 81, 88)).
+device_gate(mod,or_gate,(273, 220, 274)).
+device_gate(mod,or_gate,(486, 418, 487)).
+device_gate(mod,or_gate,(251, 237, 275)).
+device_gate(mod,or_gate,(440, 401, 441)).
+device_gate(mod,and_gate,(439, 434, 440)).
+device_gate(mod,or_gate,(413, 93, 435)).
+device_gate(mod,and_gate,(433, 398, 434)).
+device_gate(mod,not_gate,(83, 84)).
+device_gate(mod,or_gate,(84, 37, 85)).
+device_gate(mod,not_gate,(418, 437)).
+device_gate(mod,and_gate,(71, 72, 73)).
+device_gate(mod,or_gate,(73, 74, 75)).
+device_gate(mod,or_gate,(75, 37, 76)).
+device_gate(mod,and_gate,(76, 70, 77)).
+device_gate(mod,or_gate,(77, 12, 78)).
+device_gate(mod,or_gate,(39, 79, 80)).
+device_gate(mod,and_gate,(3, 81, 82)).
+device_gate(mod,or_gate,(82, 71, 83)).
+device_gate(mod,or_gate,(144, 17, 180)).
+device_gate(mod,and_gate,(179, 176, 24)).
+device_gate(mod,and_gate,(182, 183, 184)).
+device_gate(mod,or_gate,(116, 181, 182)).
+device_gate(mod,and_gate,(184, 180, 25)).
+device_gate(mod,or_gate,(245, 13, 283)).
+device_gate(mod,not_gate,(532, 534)).
+device_gate(mod,or_gate,(442, 389, 443)).
+device_gate(mod,and_gate,(441, 432, 442)).
+device_gate(mod,or_gate,(422, 391, 423)).
+device_gate(mod,and_gate,(352, 207, 353)).
+device_gate(mod,or_gate,(351, 292, 352)).
+device_gate(mod,or_gate,(292, 14, 347)).
+device_gate(mod,not_gate,(308, 346)).
+device_gate(mod,and_gate,(344, 312, 345)).
+device_gate(mod,or_gate,(343, 322, 344)).
+device_gate(mod,and_gate,(350, 295, 351)).
+device_gate(mod,or_gate,(349, 345, 350)).
+device_gate(mod,not_gate,(348, 349)).
+device_gate(mod,and_gate,(347, 346, 348)).
+device_gate(mod,or_gate,(534, 499, 535)).
+device_gate(mod,or_gate,(222, 203, 223)).
+device_gate(mod,or_gate,(205, 201, 222)).
+device_gate(mod,and_gate,(275, 274, 276)).
+device_gate(mod,or_gate,(276, 11, 277)).
+device_gate(mod,or_gate,(268, 93, 278)).
+device_gate(mod,and_gate,(278, 277, 279)).
+device_gate(mod,and_gate,(279, 272, 280)).
+device_gate(mod,or_gate,(280, 269, 281)).
+device_gate(mod,and_gate,(215, 191, 216)).
+device_gate(mod,or_gate,(214, 201, 215)).
+device_gate(mod,or_gate,(217, 202, 218)).
+device_gate(mod,and_gate,(216, 10, 217)).
+device_gate(mod,not_gate,(7, 220)).
+device_gate(mod,or_gate,(218, 11, 219)).
+device_gate(mod,not_gate,(10, 81)).
+device_gate(mod,and_gate,(220, 10, 221)).
+device_gate(mod,not_gate,(17, 181)).
+device_gate(mod,or_gate,(537, 531, 28)).
+device_gate(mod,and_gate,(37, 429, 510)).
+device_gate(mod,not_gate,(508, 509)).
+device_gate(mod,or_gate,(509, 506, 37)).
+device_gate(mod,and_gate,(429, 181, 507)).
+device_gate(mod,or_gate,(507, 187, 508)).
+device_gate(mod,not_gate,(504, 505)).
+device_gate(mod,and_gate,(505, 502, 506)).
+device_gate(mod,and_gate,(427, 388, 463)).
+device_gate(mod,and_gate,(461, 456, 462)).
+device_gate(mod,or_gate,(460, 459, 461)).
+device_gate(mod,and_gate,(457, 422, 460)).
+device_gate(mod,and_gate,(458, 441, 459)).
+device_gate(mod,not_gate,(457, 458)).
+device_gate(mod,and_gate,(390, 432, 457)).
+device_gate(mod,and_gate,(455, 454, 456)).
+device_gate(mod,or_gate,(444, 375, 455)).
+device_gate(mod,not_gate,(356, 454)).
+device_gate(mod,or_gate,(415, 414, 416)).
+device_gate(mod,not_gate,(67, 126)).
+device_gate(mod,or_gate,(92, 93, 127)).
+device_gate(mod,and_gate,(127, 87, 128)).
+device_gate(mod,and_gate,(128, 88, 129)).
+device_gate(mod,or_gate,(121, 89, 122)).
+device_gate(mod,or_gate,(122, 120, 123)).
+device_gate(mod,not_gate,(117, 124)).
+device_gate(mod,not_gate,(30, 125)).
+device_gate(mod,or_gate,(129, 94, 130)).
+device_gate(mod,or_gate,(100, 101, 131)).
+device_gate(mod,not_gate,(406, 407)).
+device_gate(mod,and_gate,(409, 11, 415)).
+device_gate(mod,and_gate,(159, 134, 160)).
+device_gate(mod,or_gate,(160, 158, 161)).
+device_gate(mod,or_gate,(510, 206, 183)).
+device_gate(mod,not_gate,(15, 185)).
+device_gate(mod,not_gate,(14, 43)).
+device_gate(mod,and_gate,(120, 100, 153)).
+device_gate(mod,or_gate,(132, 130, 154)).
+device_gate(mod,and_gate,(154, 105, 155)).
+device_gate(mod,and_gate,(155, 147, 156)).
+device_gate(mod,or_gate,(156, 153, 20)).
+device_gate(mod,and_gate,(66, 126, 157)).
+device_gate(mod,and_gate,(157, 106, 158)).
+device_gate(mod,not_gate,(157, 159)).
+device_gate(mod,or_gate,(332, 318, 333)).
+device_gate(mod,not_gate,(327, 332)).
+device_gate(mod,not_gate,(143, 115)).
+device_gate(mod,and_gate,(175, 186, 143)).
+device_gate(mod,or_gate,(526, 37, 527)).
+device_gate(mod,not_gate,(525, 526)).
+device_gate(mod,and_gate,(369, 329, 392)).
+device_gate(mod,not_gate,(392, 393)).
+device_gate(mod,and_gate,(318, 6, 325)).
+device_gate(mod,not_gate,(323, 324)).
+device_gate(mod,or_gate,(326, 271, 327)).
+device_gate(mod,and_gate,(6, 81, 326)).
+device_gate(mod,or_gate,(328, 325, 329)).
+device_gate(mod,and_gate,(327, 290, 328)).
+device_gate(mod,or_gate,(383, 369, 384)).
+device_gate(mod,and_gate,(369, 321, 385)).
+device_gate(mod,or_gate,(479, 438, 480)).
+device_gate(mod,or_gate,(480, 427, 481)).
+device_gate(mod,not_gate,(474, 475)).
+device_gate(mod,or_gate,(40, 64, 476)).
+device_gate(mod,or_gate,(473, 469, 40)).
+device_gate(mod,and_gate,(40, 64, 474)).
+device_gate(mod,and_gate,(427, 413, 478)).
+device_gate(mod,and_gate,(418, 416, 479)).
+device_gate(mod,and_gate,(476, 475, 477)).
+device_gate(mod,not_gate,(477, 32)).
+device_gate(mod,and_gate,(417, 10, 418)).
+device_gate(mod,and_gate,(516, 515, 74)).
+device_gate(mod,not_gate,(71, 516)).
+device_gate(mod,and_gate,(514, 491, 515)).
+device_gate(mod,or_gate,(68, 93, 514)).
+device_gate(mod,not_gate,(468, 513)).
+device_gate(mod,not_gate,(453, 512)).
+device_gate(mod,and_gate,(511, 17, 117)).
+device_gate(mod,not_gate,(183, 511)).
+device_gate(mod,not_gate,(146, 119)).
+device_gate(mod,and_gate,(183, 181, 146)).
 device(mul7).
-device_port_direction(mul7,mul7out,output).
+device_port_direction(mul7,mul7out,output,0).
 device_port_width(mul7,mul7out,8).
 device_port_bit_wire(mul7,mul7out,0,2).
 device_port_bit_wire(mul7,mul7out,1,10).
@@ -142,7 +1795,7 @@ device_port_bit_wire(mul7,mul7out,4,13).
 device_port_bit_wire(mul7,mul7out,5,14).
 device_port_bit_wire(mul7,mul7out,6,15).
 device_port_bit_wire(mul7,mul7out,7,16).
-device_port_direction(mul7,mul7in,input).
+device_port_direction(mul7,mul7in,input,1).
 device_port_width(mul7,mul7in,8).
 device_port_bit_wire(mul7,mul7in,0,2).
 device_port_bit_wire(mul7,mul7in,1,3).
@@ -152,117 +1805,117 @@ device_port_bit_wire(mul7,mul7in,4,6).
 device_port_bit_wire(mul7,mul7in,5,7).
 device_port_bit_wire(mul7,mul7in,6,8).
 device_port_bit_wire(mul7,mul7in,7,9).
-device_gate(mul7,not_gate,(41, 45)).
-device_gate(mul7,or_gate,(45, 44, 46)).
-device_gate(mul7,and_gate,(46, 42, 16)).
-device_gate(mul7,and_gate,(6, 5, 68)).
-device_gate(mul7,and_gate,(63, 59, 69)).
-device_gate(mul7,not_gate,(57, 61)).
-device_gate(mul7,and_gate,(61, 5, 62)).
-device_gate(mul7,or_gate,(62, 60, 12)).
-device_gate(mul7,not_gate,(6, 63)).
-device_gate(mul7,or_gate,(63, 59, 64)).
-device_gate(mul7,or_gate,(6, 5, 65)).
-device_gate(mul7,and_gate,(65, 64, 66)).
-device_gate(mul7,and_gate,(66, 4, 67)).
-device_gate(mul7,and_gate,(78, 77, 79)).
-device_gate(mul7,or_gate,(66, 4, 78)).
-device_gate(mul7,or_gate,(74, 55, 75)).
-device_gate(mul7,not_gate,(73, 74)).
-device_gate(mul7,or_gate,(70, 51, 77)).
-device_gate(mul7,and_gate,(75, 72, 76)).
-device_gate(mul7,and_gate,(70, 51, 71)).
-device_gate(mul7,or_gate,(69, 68, 70)).
-device_gate(mul7,or_gate,(53, 5, 73)).
-device_gate(mul7,or_gate,(71, 67, 72)).
-device_gate(mul7,or_gate,(87, 82, 88)).
-device_gate(mul7,or_gate,(80, 79, 89)).
-device_gate(mul7,or_gate,(85, 83, 86)).
-device_gate(mul7,not_gate,(86, 87)).
-device_gate(mul7,and_gate,(59, 2, 84)).
-device_gate(mul7,and_gate,(84, 56, 85)).
-device_gate(mul7,or_gate,(81, 76, 82)).
-device_gate(mul7,and_gate,(53, 5, 83)).
-device_gate(mul7,and_gate,(73, 56, 80)).
-device_gate(mul7,and_gate,(80, 79, 81)).
-device_gate(mul7,and_gate,(7, 63, 32)).
-device_gate(mul7,and_gate,(96, 6, 36)).
-device_gate(mul7,and_gate,(92, 88, 13)).
-device_gate(mul7,or_gate,(86, 91, 92)).
-device_gate(mul7,and_gate,(90, 89, 91)).
-device_gate(mul7,or_gate,(75, 72, 90)).
-device_gate(mul7,not_gate,(7, 96)).
+device_gate(mul7,and_gate,(48, 47, 49)).
+device_gate(mul7,or_gate,(36, 4, 48)).
+device_gate(mul7,or_gate,(44, 25, 45)).
+device_gate(mul7,not_gate,(43, 44)).
+device_gate(mul7,or_gate,(40, 21, 47)).
+device_gate(mul7,and_gate,(45, 42, 46)).
+device_gate(mul7,and_gate,(40, 21, 41)).
+device_gate(mul7,or_gate,(39, 38, 40)).
+device_gate(mul7,or_gate,(23, 5, 43)).
+device_gate(mul7,or_gate,(41, 37, 42)).
+device_gate(mul7,and_gate,(69, 29, 70)).
+device_gate(mul7,or_gate,(68, 67, 69)).
+device_gate(mul7,not_gate,(71, 72)).
+device_gate(mul7,or_gate,(69, 29, 71)).
+device_gate(mul7,and_gate,(73, 65, 74)).
+device_gate(mul7,or_gate,(72, 70, 73)).
+device_gate(mul7,and_gate,(71, 75, 76)).
+device_gate(mul7,not_gate,(70, 75)).
+device_gate(mul7,or_gate,(77, 74, 78)).
+device_gate(mul7,and_gate,(76, 64, 77)).
+device_gate(mul7,or_gate,(33, 29, 34)).
+device_gate(mul7,or_gate,(6, 5, 35)).
+device_gate(mul7,or_gate,(32, 30, 12)).
+device_gate(mul7,not_gate,(6, 33)).
+device_gate(mul7,not_gate,(27, 31)).
+device_gate(mul7,and_gate,(31, 5, 32)).
+device_gate(mul7,or_gate,(80, 51, 81)).
+device_gate(mul7,or_gate,(76, 64, 82)).
+device_gate(mul7,or_gate,(78, 63, 79)).
+device_gate(mul7,and_gate,(56, 61, 80)).
+device_gate(mul7,or_gate,(84, 81, 85)).
+device_gate(mul7,and_gate,(85, 79, 14)).
+device_gate(mul7,or_gate,(73, 65, 83)).
+device_gate(mul7,and_gate,(83, 82, 84)).
+device_gate(mul7,and_gate,(79, 82, 86)).
+device_gate(mul7,and_gate,(34, 66, 87)).
+device_gate(mul7,and_gate,(21, 19, 25)).
+device_gate(mul7,not_gate,(23, 24)).
+device_gate(mul7,and_gate,(4, 3, 23)).
+device_gate(mul7,and_gate,(21, 2, 22)).
+device_gate(mul7,or_gate,(28, 22, 11)).
+device_gate(mul7,and_gate,(27, 24, 28)).
+device_gate(mul7,and_gate,(26, 18, 27)).
+device_gate(mul7,not_gate,(25, 26)).
+device_gate(mul7,and_gate,(27, 29, 30)).
+device_gate(mul7,not_gate,(5, 29)).
 device_gate(mul7,not_gate,(94, 95)).
-device_gate(mul7,and_gate,(77, 64, 94)).
-device_gate(mul7,and_gate,(88, 90, 93)).
-device_gate(mul7,or_gate,(100, 98, 101)).
-device_gate(mul7,and_gate,(101, 95, 25)).
+device_gate(mul7,and_gate,(93, 92, 94)).
+device_gate(mul7,or_gate,(69, 90, 93)).
+device_gate(mul7,not_gate,(91, 92)).
+device_gate(mul7,and_gate,(69, 90, 91)).
+device_gate(mul7,not_gate,(8, 90)).
+device_gate(mul7,not_gate,(88, 89)).
+device_gate(mul7,or_gate,(87, 39, 88)).
+device_gate(mul7,and_gate,(94, 88, 97)).
+device_gate(mul7,and_gate,(95, 89, 96)).
+device_gate(mul7,or_gate,(3, 2, 17)).
+device_gate(mul7,not_gate,(2, 18)).
+device_gate(mul7,not_gate,(3, 19)).
+device_gate(mul7,or_gate,(19, 18, 20)).
+device_gate(mul7,and_gate,(20, 17, 10)).
+device_gate(mul7,not_gate,(4, 21)).
+device_gate(mul7,or_gate,(104, 96, 105)).
+device_gate(mul7,not_gate,(9, 106)).
+device_gate(mul7,or_gate,(97, 96, 98)).
+device_gate(mul7,or_gate,(98, 86, 99)).
+device_gate(mul7,and_gate,(84, 81, 100)).
+device_gate(mul7,or_gate,(100, 74, 101)).
 device_gate(mul7,not_gate,(98, 102)).
-device_gate(mul7,and_gate,(99, 102, 103)).
-device_gate(mul7,or_gate,(32, 36, 97)).
-device_gate(mul7,and_gate,(97, 59, 98)).
-device_gate(mul7,or_gate,(97, 59, 99)).
-device_gate(mul7,not_gate,(99, 100)).
-device_gate(mul7,and_gate,(103, 94, 104)).
-device_gate(mul7,or_gate,(104, 25, 105)).
-device_gate(mul7,or_gate,(41, 30, 42)).
-device_gate(mul7,or_gate,(40, 39, 41)).
-device_gate(mul7,and_gate,(21, 43, 44)).
-device_gate(mul7,not_gate,(18, 43)).
-device_gate(mul7,and_gate,(64, 96, 111)).
-device_gate(mul7,and_gate,(106, 108, 20)).
-device_gate(mul7,and_gate,(86, 91, 107)).
-device_gate(mul7,or_gate,(105, 93, 106)).
-device_gate(mul7,or_gate,(103, 94, 108)).
-device_gate(mul7,or_gate,(107, 81, 23)).
-device_gate(mul7,and_gate,(109, 108, 22)).
-device_gate(mul7,or_gate,(101, 95, 109)).
-device_gate(mul7,and_gate,(110, 106, 14)).
-device_gate(mul7,or_gate,(22, 23, 110)).
-device_gate(mul7,not_gate,(3, 49)).
-device_gate(mul7,or_gate,(49, 48, 50)).
-device_gate(mul7,or_gate,(3, 2, 47)).
-device_gate(mul7,not_gate,(2, 48)).
-device_gate(mul7,and_gate,(50, 47, 10)).
-device_gate(mul7,not_gate,(4, 51)).
-device_gate(mul7,and_gate,(118, 113, 18)).
-device_gate(mul7,and_gate,(117, 112, 17)).
-device_gate(mul7,not_gate,(8, 34)).
-device_gate(mul7,and_gate,(97, 34, 114)).
-device_gate(mul7,or_gate,(111, 69, 112)).
-device_gate(mul7,not_gate,(112, 113)).
-device_gate(mul7,and_gate,(116, 115, 117)).
-device_gate(mul7,not_gate,(117, 118)).
-device_gate(mul7,not_gate,(114, 115)).
-device_gate(mul7,or_gate,(97, 34, 116)).
-device_gate(mul7,and_gate,(22, 23, 24)).
-device_gate(mul7,or_gate,(24, 25, 26)).
-device_gate(mul7,or_gate,(17, 18, 19)).
-device_gate(mul7,or_gate,(19, 20, 21)).
-device_gate(mul7,and_gate,(28, 21, 15)).
-device_gate(mul7,and_gate,(27, 26, 29)).
-device_gate(mul7,not_gate,(19, 27)).
-device_gate(mul7,or_gate,(27, 26, 28)).
-device_gate(mul7,or_gate,(29, 18, 30)).
-device_gate(mul7,not_gate,(9, 31)).
-device_gate(mul7,and_gate,(33, 34, 35)).
-device_gate(mul7,not_gate,(32, 33)).
-device_gate(mul7,not_gate,(37, 38)).
-device_gate(mul7,or_gate,(35, 36, 37)).
-device_gate(mul7,and_gate,(37, 9, 40)).
-device_gate(mul7,and_gate,(38, 31, 39)).
-device_gate(mul7,and_gate,(57, 59, 60)).
-device_gate(mul7,not_gate,(5, 59)).
-device_gate(mul7,or_gate,(58, 52, 11)).
-device_gate(mul7,and_gate,(57, 54, 58)).
-device_gate(mul7,and_gate,(56, 48, 57)).
-device_gate(mul7,not_gate,(55, 56)).
-device_gate(mul7,and_gate,(51, 49, 55)).
-device_gate(mul7,not_gate,(53, 54)).
-device_gate(mul7,and_gate,(4, 3, 53)).
-device_gate(mul7,and_gate,(51, 2, 52)).
+device_gate(mul7,or_gate,(102, 101, 103)).
+device_gate(mul7,and_gate,(103, 99, 15)).
+device_gate(mul7,and_gate,(102, 101, 104)).
+device_gate(mul7,and_gate,(99, 115, 116)).
+device_gate(mul7,not_gate,(96, 115)).
+device_gate(mul7,and_gate,(109, 9, 112)).
+device_gate(mul7,and_gate,(110, 106, 111)).
+device_gate(mul7,or_gate,(113, 105, 114)).
+device_gate(mul7,or_gate,(112, 111, 113)).
+device_gate(mul7,and_gate,(107, 90, 108)).
+device_gate(mul7,not_gate,(68, 107)).
+device_gate(mul7,not_gate,(109, 110)).
+device_gate(mul7,or_gate,(108, 67, 109)).
+device_gate(mul7,and_gate,(118, 114, 16)).
+device_gate(mul7,not_gate,(113, 117)).
+device_gate(mul7,or_gate,(117, 116, 118)).
+device_gate(mul7,and_gate,(7, 33, 68)).
+device_gate(mul7,and_gate,(66, 6, 67)).
+device_gate(mul7,not_gate,(7, 66)).
+device_gate(mul7,not_gate,(64, 65)).
+device_gate(mul7,and_gate,(47, 34, 64)).
+device_gate(mul7,and_gate,(58, 60, 63)).
+device_gate(mul7,and_gate,(62, 58, 13)).
+device_gate(mul7,or_gate,(56, 61, 62)).
+device_gate(mul7,and_gate,(60, 59, 61)).
+device_gate(mul7,or_gate,(45, 42, 60)).
+device_gate(mul7,and_gate,(6, 5, 38)).
+device_gate(mul7,and_gate,(33, 29, 39)).
+device_gate(mul7,and_gate,(35, 34, 36)).
+device_gate(mul7,and_gate,(36, 4, 37)).
+device_gate(mul7,and_gate,(43, 26, 50)).
+device_gate(mul7,and_gate,(50, 49, 51)).
+device_gate(mul7,or_gate,(51, 46, 52)).
+device_gate(mul7,and_gate,(23, 5, 53)).
+device_gate(mul7,and_gate,(29, 2, 54)).
+device_gate(mul7,and_gate,(54, 26, 55)).
+device_gate(mul7,or_gate,(55, 53, 56)).
+device_gate(mul7,not_gate,(56, 57)).
+device_gate(mul7,or_gate,(57, 52, 58)).
+device_gate(mul7,or_gate,(50, 49, 59)).
 device(mul5).
-device_port_direction(mul5,mul5in,input).
+device_port_direction(mul5,mul5in,input,0).
 device_port_width(mul5,mul5in,8).
 device_port_bit_wire(mul5,mul5in,0,2).
 device_port_bit_wire(mul5,mul5in,1,3).
@@ -272,7 +1925,7 @@ device_port_bit_wire(mul5,mul5in,4,6).
 device_port_bit_wire(mul5,mul5in,5,7).
 device_port_bit_wire(mul5,mul5in,6,8).
 device_port_bit_wire(mul5,mul5in,7,9).
-device_port_direction(mul5,mul5out,output).
+device_port_direction(mul5,mul5out,output,1).
 device_port_width(mul5,mul5out,8).
 device_port_bit_wire(mul5,mul5out,0,2).
 device_port_bit_wire(mul5,mul5out,1,3).
@@ -282,76 +1935,76 @@ device_port_bit_wire(mul5,mul5out,4,12).
 device_port_bit_wire(mul5,mul5out,5,13).
 device_port_bit_wire(mul5,mul5out,6,14).
 device_port_bit_wire(mul5,mul5out,7,15).
-device_gate(mul5,or_gate,(73, 56, 76)).
-device_gate(mul5,and_gate,(81, 80, 82)).
-device_gate(mul5,or_gate,(42, 29, 51)).
-device_gate(mul5,or_gate,(82, 78, 15)).
-device_gate(mul5,and_gate,(51, 50, 52)).
-device_gate(mul5,and_gate,(28, 24, 11)).
-device_gate(mul5,and_gate,(6, 4, 29)).
-device_gate(mul5,not_gate,(29, 30)).
-device_gate(mul5,or_gate,(6, 4, 31)).
-device_gate(mul5,or_gate,(21, 20, 25)).
-device_gate(mul5,or_gate,(3, 5, 26)).
-device_gate(mul5,and_gate,(26, 25, 27)).
-device_gate(mul5,or_gate,(27, 16, 28)).
-device_gate(mul5,and_gate,(34, 32, 49)).
-device_gate(mul5,or_gate,(45, 30, 50)).
-device_gate(mul5,or_gate,(46, 43, 47)).
-device_gate(mul5,or_gate,(47, 38, 48)).
-device_gate(mul5,and_gate,(31, 30, 32)).
-device_gate(mul5,and_gate,(27, 16, 33)).
-device_gate(mul5,and_gate,(42, 29, 43)).
-device_gate(mul5,not_gate,(41, 44)).
-device_gate(mul5,and_gate,(38, 35, 12)).
-device_gate(mul5,and_gate,(7, 5, 39)).
-device_gate(mul5,and_gate,(21, 20, 22)).
-device_gate(mul5,or_gate,(44, 39, 45)).
-device_gate(mul5,not_gate,(77, 81)).
-device_gate(mul5,not_gate,(3, 21)).
-device_gate(mul5,and_gate,(61, 60, 62)).
-device_gate(mul5,not_gate,(62, 63)).
-device_gate(mul5,or_gate,(63, 54, 64)).
-device_gate(mul5,and_gate,(52, 49, 65)).
-device_gate(mul5,or_gate,(65, 43, 66)).
-device_gate(mul5,and_gate,(24, 25, 37)).
-device_gate(mul5,and_gate,(67, 64, 14)).
-device_gate(mul5,and_gate,(64, 60, 68)).
-device_gate(mul5,not_gate,(7, 69)).
-device_gate(mul5,not_gate,(9, 70)).
-device_gate(mul5,not_gate,(32, 36)).
-device_gate(mul5,or_gate,(37, 36, 38)).
-device_gate(mul5,or_gate,(62, 66, 67)).
-device_gate(mul5,and_gate,(76, 75, 77)).
-device_gate(mul5,and_gate,(77, 68, 78)).
 device_gate(mul5,not_gate,(74, 75)).
-device_gate(mul5,not_gate,(39, 40)).
-device_gate(mul5,or_gate,(72, 71, 73)).
-device_gate(mul5,and_gate,(73, 56, 74)).
+device_gate(mul5,or_gate,(73, 56, 76)).
+device_gate(mul5,and_gate,(76, 75, 77)).
+device_gate(mul5,and_gate,(58, 39, 59)).
 device_gate(mul5,and_gate,(70, 69, 71)).
 device_gate(mul5,and_gate,(9, 7, 72)).
-device_gate(mul5,and_gate,(45, 30, 46)).
-device_gate(mul5,and_gate,(62, 66, 79)).
+device_gate(mul5,or_gate,(72, 71, 73)).
+device_gate(mul5,and_gate,(73, 56, 74)).
+device_gate(mul5,and_gate,(77, 68, 78)).
 device_gate(mul5,or_gate,(79, 59, 80)).
-device_gate(mul5,or_gate,(23, 17, 24)).
-device_gate(mul5,or_gate,(22, 19, 23)).
+device_gate(mul5,and_gate,(26, 25, 27)).
+device_gate(mul5,or_gate,(27, 16, 28)).
+device_gate(mul5,or_gate,(21, 20, 25)).
+device_gate(mul5,or_gate,(3, 5, 26)).
+device_gate(mul5,not_gate,(29, 30)).
+device_gate(mul5,or_gate,(6, 4, 31)).
+device_gate(mul5,and_gate,(28, 24, 11)).
+device_gate(mul5,and_gate,(6, 4, 29)).
+device_gate(mul5,and_gate,(31, 30, 32)).
+device_gate(mul5,and_gate,(27, 16, 33)).
+device_gate(mul5,and_gate,(81, 80, 82)).
+device_gate(mul5,not_gate,(77, 81)).
+device_gate(mul5,or_gate,(82, 78, 15)).
+device_gate(mul5,and_gate,(51, 50, 52)).
+device_gate(mul5,or_gate,(42, 29, 51)).
+device_gate(mul5,and_gate,(53, 48, 13)).
+device_gate(mul5,or_gate,(47, 38, 48)).
+device_gate(mul5,or_gate,(46, 43, 47)).
+device_gate(mul5,or_gate,(45, 30, 50)).
+device_gate(mul5,and_gate,(34, 32, 49)).
+device_gate(mul5,not_gate,(41, 44)).
+device_gate(mul5,and_gate,(42, 29, 43)).
+device_gate(mul5,and_gate,(45, 30, 46)).
+device_gate(mul5,or_gate,(44, 39, 45)).
+device_gate(mul5,and_gate,(52, 49, 65)).
+device_gate(mul5,or_gate,(63, 54, 64)).
+device_gate(mul5,not_gate,(62, 63)).
+device_gate(mul5,and_gate,(61, 60, 62)).
+device_gate(mul5,and_gate,(64, 60, 68)).
+device_gate(mul5,and_gate,(67, 64, 14)).
+device_gate(mul5,or_gate,(62, 66, 67)).
+device_gate(mul5,or_gate,(65, 43, 66)).
+device_gate(mul5,and_gate,(62, 66, 79)).
+device_gate(mul5,not_gate,(9, 70)).
+device_gate(mul5,not_gate,(7, 69)).
+device_gate(mul5,or_gate,(34, 32, 35)).
+device_gate(mul5,or_gate,(33, 19, 34)).
+device_gate(mul5,and_gate,(24, 25, 37)).
+device_gate(mul5,not_gate,(32, 36)).
+device_gate(mul5,and_gate,(38, 35, 12)).
+device_gate(mul5,or_gate,(37, 36, 38)).
+device_gate(mul5,not_gate,(39, 40)).
+device_gate(mul5,and_gate,(7, 5, 39)).
 device_gate(mul5,and_gate,(41, 40, 42)).
 device_gate(mul5,or_gate,(7, 5, 41)).
+device_gate(mul5,not_gate,(55, 56)).
+device_gate(mul5,or_gate,(8, 6, 57)).
+device_gate(mul5,and_gate,(57, 56, 58)).
+device_gate(mul5,and_gate,(48, 50, 54)).
+device_gate(mul5,and_gate,(8, 6, 55)).
+device_gate(mul5,or_gate,(23, 17, 24)).
+device_gate(mul5,or_gate,(22, 19, 23)).
+device_gate(mul5,or_gate,(52, 49, 53)).
+device_gate(mul5,not_gate,(59, 60)).
+device_gate(mul5,or_gate,(58, 39, 61)).
 device_gate(mul5,and_gate,(18, 17, 10)).
 device_gate(mul5,or_gate,(2, 4, 18)).
 device_gate(mul5,not_gate,(16, 17)).
 device_gate(mul5,and_gate,(2, 4, 16)).
-device_gate(mul5,or_gate,(34, 32, 35)).
-device_gate(mul5,or_gate,(33, 19, 34)).
+device_gate(mul5,and_gate,(21, 20, 22)).
+device_gate(mul5,not_gate,(3, 21)).
 device_gate(mul5,not_gate,(5, 20)).
 device_gate(mul5,and_gate,(3, 5, 19)).
-device_gate(mul5,and_gate,(58, 39, 59)).
-device_gate(mul5,and_gate,(57, 56, 58)).
-device_gate(mul5,or_gate,(8, 6, 57)).
-device_gate(mul5,not_gate,(55, 56)).
-device_gate(mul5,and_gate,(8, 6, 55)).
-device_gate(mul5,and_gate,(48, 50, 54)).
-device_gate(mul5,and_gate,(53, 48, 13)).
-device_gate(mul5,or_gate,(52, 49, 53)).
-device_gate(mul5,or_gate,(58, 39, 61)).
-device_gate(mul5,not_gate,(59, 60)).

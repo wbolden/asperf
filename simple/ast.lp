@@ -2,6 +2,7 @@
 bit(0;1).
 
 #const bits=8.
+#const max_index = 30.
 
 bit_index(0..bits-1).
 
@@ -31,8 +32,9 @@ leaf(I) :- node(I), 0{edge(I,C)}0.
       
 multiplier(mul13;mul7;mul5).
         
-bin_op(xor;and).
-un_op(mul13;mul7;mul5).
+bin_op(xor;and;mod;mul;sub).
+% bin_op(xor;and).
+un_op(mul13;mul7;mul5;neg).
 null_op(const;key).
 
 type(T) :- bin_op(T).
@@ -85,33 +87,36 @@ val_bit(K,I,B,V) :-
     
 %%% Advanced operations (mul,shl,shr,mod,div,add,sub), need yosys circuits
     
-%%% Is this the general idea you had for multiply
-%%% idk if what I wrote here works, assume it would
-%%% multiline comment is %* *%
-%*
-val_bit(K,I,B,V) :- 
-    op(I,mul),
-    edge(I,I1),
-    edge(I,I2),
-    I1<I2,
-    val_bit(K,I1,B,V1), 
-    val_bit(K,I2,B,V2),
-    input_signal(I,K,mul,B,V1,V2),
-    output_signal(I,K,B,V).
-*%  
-    
 % if there is a node multiplying by 13, set the appropriate bit as input
-
 input_signal(I,K,P,B,V1) :- 
     op(I,D),
     edge(I,I1),
     val_bit(K,I1,B,V1),
-    device_port_direction(D,P,input).
+    device_port_direction(D,P,input,C).
+
+2{input_signal(I,K,P1,B,V1);input_signal(I,K,P2,B,V2)}2 :-
+    op(I,D),
+    edge(I,I1),
+    edge(I,I2),
+    I1 < I2,
+    %left_input(P1),
+    %right_input(P2),
+    device_port_direction(D,P1,input,C1),
+    device_port_direction(D,P2,input,C2),
+    C1 < C2,
+    val_bit(K,I1,B,V1),
+    val_bit(K,I2,B,V2).
     
 val_bit(K,I,B,V) :- output_signal(I,K,B,V).
 
+% get hash bit from node 0
 hash_bit(K,B,V) :- val_bit(K,0,B,V).
 
+% add up the hash bits for each key
+hash_val(K,H) :- key(K), H = #sum{V*2**B:hash_bit(K,B,V)}.
+    
+:- hash_val(K,H), H > max_index.
+    
 %occupied(B,V) :- hash(K,B,V).
 %collision :- occupied(V), 2 {hash(K,V)}.
     
@@ -137,3 +142,4 @@ collision(K1,K2) :-
 %#show key/1.
 #show edge/2.
 #show op/2.
+#show hash_val/2.

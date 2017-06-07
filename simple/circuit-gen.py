@@ -31,6 +31,30 @@ module mul5(mul5in, mul5out);
     assign mul5out = mul5in * 5;
 endmodule
 
+module mod(modin1,modin2,modout);
+    parameter WIDTH = {0};
+    input [WIDTH-1:0] modin1;
+    input [WIDTH-1:0] modin2;
+    output [WIDTH-1:0] modout;
+    assign modout = modin1 % modin2;
+endmodule
+
+module mul(mulin1,mulin2,mulout);
+    parameter WIDTH = {0};
+    input [WIDTH-1:0] mulin1;
+    input [WIDTH-1:0] mulin2;
+    output [WIDTH-1:0] mulout;
+    assign mulout = mulin1 % mulin2;
+endmodule
+
+module sub(subin1,subin2,subout);
+    parameter WIDTH = {0};
+    input [WIDTH-1:0] subin1;
+    input [WIDTH-1:0] subin2;
+    output [WIDTH-1:0] subout;
+    assign subout = subin1 % subin2;
+endmodule
+
 """.format(width)
 
 yosys_cmd = \
@@ -52,9 +76,11 @@ outfile = open('multiplier.lp','w')
 for m in modules:
     outfile.write('device({}).\n'.format(m))
     dev = modules[m]
+    count = 0
     for p in dev['ports']:
         port = dev['ports'][p]
-        outfile.write('device_port_direction({},{},{}).\n'.format(m,p,port['direction']))
+        outfile.write('device_port_direction({},{},{},{}).\n'.format(m,p,port['direction'],count))
+        count += 1
         outfile.write('device_port_width({},{},{}).\n'.format(m,p,len(port['bits'])))
         for i,b in enumerate(port['bits']):
             outfile.write('device_port_bit_wire({},{},{},{}).\n'.format(m,p,i,b))
