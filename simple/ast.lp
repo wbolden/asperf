@@ -32,9 +32,10 @@ leaf(I) :- node(I), 0{edge(I,C)}0.
       
 multiplier(mul13;mul7;mul5).
         
-bin_op(xor;and;mod;mul;sub).
-% bin_op(xor;and).
-un_op(mul13;mul7;mul5;neg).
+%bin_op(xor;and;mod;mul;sub).
+bin_op(xor;and;mod).
+%un_op(mul13;mul7;mul5;neg).
+un_op(neg).
 null_op(const;key).
 
 type(T) :- bin_op(T).
@@ -94,18 +95,31 @@ input_signal(I,K,P,B,V1) :-
     val_bit(K,I1,B,V1),
     device_port_direction(D,P,input,C).
 
-2{input_signal(I,K,P1,B,V1);input_signal(I,K,P2,B,V2)}2 :-
-    op(I,D),
-    edge(I,I1),
-    edge(I,I2),
-    I1 < I2,
-    %left_input(P1),
-    %right_input(P2),
+left_edge(I,I1) :- edge(I,I1), edge(I,I2), I1 < I2.
+    
+right_edge(I,I2) :- edge(I,I1), edge(I,I2), I1 < I2.
+    
+left_port(D,P1) :-
     device_port_direction(D,P1,input,C1),
     device_port_direction(D,P2,input,C2),
-    C1 < C2,
-    val_bit(K,I1,B,V1),
-    val_bit(K,I2,B,V2).
+    C1 < C2.
+
+right_port(D,P2) :-
+    device_port_direction(D,P1,input,C1),
+    device_port_direction(D,P2,input,C2),
+    C1 < C2.
+    
+input_signal(I,K,P,B,V) :-
+    op(I,D),
+    left_edge(I,I1),
+    left_port(D,P),
+    val_bit(K,I1,B,V).
+
+input_signal(I,K,P,B,V) :-
+    op(I,D),
+    right_edge(I,I2),
+    right_port(D,P),
+    val_bit(K,I2,B,V).
     
 val_bit(K,I,B,V) :- output_signal(I,K,B,V).
 

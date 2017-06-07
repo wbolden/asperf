@@ -5,7 +5,6 @@ except:
     print 'usage: python circuit-gen.py port-width'
     exit()
     
-verilog_src = \
 """
 module mul13(mul13in, mul13out);
     parameter WIDTH = {0};
@@ -30,7 +29,9 @@ module mul5(mul5in, mul5out);
     
     assign mul5out = mul5in * 5;
 endmodule
-
+"""
+verilog_src = \
+"""
 module mod(modin1,modin2,modout);
     parameter WIDTH = {0};
     input [WIDTH-1:0] modin1;
