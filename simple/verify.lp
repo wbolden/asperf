@@ -1,56 +1,21 @@
 
-bit(0;1).
-
-#const bits=8.
-#const max_index = 30.
-
-bit_index(0..bits-1).
-
-id(0..10).
-
-rooted(0).
-rooted(B) :- rooted(A), edge(A,B).
-:- node(B), not rooted(B).
-
-%%% Each node has 0-2 children and is connected to the root
-%%% Childen have greater ids than their parents
-0 {edge(A,B):id(B),B>A} 2 :- rooted(A).
-
-%%% Children cant have multiple parents
-%%% It might actually be useful to allow this, so not really an AST anymore
-%%% :- id(I), not 0 #sum{1,P:edge(P,I)} 1.
-          
-%%% TODO:
-% All subdags contain at least one key item if the head of the tree is an operation
-% This is just an optimization and shouldnt affect the final answer (assuming we tell it to find optimal)
-%%%
-
-node(I) :- rooted(I).
 binary(I) :- node(I), 2{edge(I,C)}2.
 unary(I) :- node(I), 1{edge(I,C)}1.
 leaf(I) :- node(I), 0{edge(I,C)}0.
       
-multiplier(mul13;mul7;mul5).
         
 %bin_op(xor;and;mod;mul;sub).
-bin_op(xor;and;mod).
+%bin_op(xor;and;mod;mul;sub).
+bin_op(xor;and).
 %un_op(mul13;mul7;mul5;neg).
-un_op(neg).
+un_op(neg;shr4).
 null_op(const;key).
 
 type(T) :- bin_op(T).
 type(T) :- un_op(T).
 type(T) :- null_op(T).
     
-%%%Choose one operation for each node
 
-1{op(I, T):bin_op(T)}1 :- binary(I).
-1{op(I, T):un_op(T)}1 :- unary(I).
-1{op(I, T):null_op(T)}1 :- leaf(I).
-    
-
-%%%Create constants
-1 {const_bit(I,B,0..1)} 1 :- op(I,const),bit_index(B).
 
 %%%Evaluate the dag, (Key, Id, Bit, Value)
 
@@ -121,31 +86,35 @@ input_signal(I,K,P,B,V) :-
     right_port(D,P),
     val_bit(K,I2,B,V).
     
+    
 val_bit(K,I,B,V) :- output_signal(I,K,B,V).
 
 % get hash bit from node 0
 hash_bit(K,B,V) :- val_bit(K,0,B,V).
 
 % add up the hash bits for each key
-hash_val(K,H) :- key(K), H = #sum{V*2**B:hash_bit(K,B,V)}.
+%hash_val(K,H) :- key(K), H = #sum{V*2**B:hash_bit(K,B,V)}.
     
-:- hash_val(K,H), H > max_index.
+%%:- hash_val(K,H), H > max_index.
     
 %occupied(B,V) :- hash(K,B,V).
 %collision :- occupied(V), 2 {hash(K,V)}.
     
 %%%collision :- key(K1), key(K2), K1!=K2, hash(K1,V), hash(K2,V).
+
+hash_bit_agree(K1,K2,B) :- K1 < K2, hash_bit(K1,B,V), hash_bit(K2,B,V).
     
 %%% Maybe we can use a custom theory progagator to ignore quagratic cost here
 collision(K1,K2) :- 
-    key(K1), 
-    key(K2), 
-    K1 < K2, 
-    0 = #sum {V*2**B,v1:hash_bit(K1,B,V); -V*2**B,v2:hash_bit(K2,B,V)}.
+    key(K1);
+    key(K2); 
+    hash_bit_agree(K1,K2,B):B=0..bits-1.
+    %K1 < K2;
+    %0 = #sum {V*2**B,v1:hash_bit(K1,B,V); -V*2**B,v2:hash_bit(K2,B,V)}.
     
 :- collision(K1,K2).
     
-%#minimize{V:node(V)}.
+%
     
 %%% Visualization rules
 
@@ -156,4 +125,39 @@ collision(K1,K2) :-
 %#show key/1.
 #show edge/2.
 #show op/2.
-#show hash_val/2.
+%#show hash_val/2.
+
+%:- key(K), 114 #sum{ V*2**B:hash_bit(K,B,V)}.
+
+    
+1 { worst_key(K):key(K)} 1.
+:- worst_key(K1), key(K2), 1 #sum{ -V*2**B,k1:hash_bit(K1,B,V);  V*2**B,k2:hash_bit(K2,B,V)}.
+   
+% ... there is some other K2 with a hash that is higher than this one.
+
+    
+#minimize{ V*2**B@2,K:hash_bit(K,B,V),worst_key(K)}.
+
+
+%#minimize{ V*2**B@2,K:hash_bit(K,B,V)}.
+
+#minimize{1@1,V:node(V)}.
+
+#script (python)
+def main(prg):
+    prg.ground([("base",[])])
+    prg.solve(on_model=on_model)
+    
+import re
+from collections import defaultdict
+
+def on_model(model):
+    hashes = defaultdict(int)
+    for s in model.symbols(atoms=True):
+        if s.name == "hash_bit":
+            hashes[s.arguments[0].number] += s.arguments[2].number*2**s.arguments[1].number
+            
+
+    for pair in hashes.items():
+        print("hash(%d) = %d" % pair)
+#end.
