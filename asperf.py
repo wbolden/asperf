@@ -3,10 +3,11 @@ import os
 import argparse
 import math
 import subprocess
-
+from sys import stdin
+    
 parser = argparse.ArgumentParser(description='Generate a perfect hash function.')
 
-parser.add_argument("keyfile", help="a newline delimited array of keys to be hashed",type=str)
+parser.add_argument("keyfile", nargs='?', help="a newline delimited array of keys to be hashed",type=str)
 
 parser.add_argument("--template", help="a function template lp file for asperf to fill in",type=str)
 
@@ -22,8 +23,18 @@ args = parser.parse_args()
 
     
 #Read keyfile
-keys = open(args.keyfile).read().splitlines()
-keys = map(int, keys)
+if args.keyfile:
+    keys = open(args.keyfile).read().splitlines()
+    keys = map(int, keys)
+else:
+    keys = []
+    for line in stdin:
+        try:
+            key = eval(line)
+            if type(key) == int:
+                keys += [key]
+        except SyntaxError:
+            pass
 
 
 #bits = ceilmax(bits in largest key, bits in number of keys)
