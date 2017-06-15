@@ -170,11 +170,13 @@ def on_model(model):
         if op == "mul":
             succ = D.successors(node)
             succ.sort()
-            print("    int i%s = i%s * i%s;" % (node, succ[0], succ[1]))
+            mask = 2**bits-1
+            print("    int i%s = %s & (i%s * i%s);" % (node, mask, succ[0], succ[1]))
         if op == "sub":
             succ = D.successors(node)
             succ.sort()
-            print("    int i%s = i%s - i%s;" % (node, succ[0], succ[1]))
+            mask = 2**bits-1
+            print("    int i%s = %s & (i%s - i%s);" % (node, mask, succ[0], succ[1]))
 
         if node == 0:
             print("    return i0;")
