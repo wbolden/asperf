@@ -29,3 +29,4 @@ optional arguments:
   
   -n N                 number of operations
 
+  -p P                 parallel mode

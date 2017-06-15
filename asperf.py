@@ -13,7 +13,7 @@ parser.add_argument("--template", help="a function template lp file for asperf t
 parser.add_argument("--yosys", help="generate a yosys circuit for additional operations",action="store_true")
 parser.add_argument("-b", help="number of bits per key",type=int)
 parser.add_argument("-n", help="number of operations",type=int, default=6)
-parser.add_argument("-p", help="paralell mode",type=int)
+parser.add_argument("-p", help="parallel mode",type=int)
 
 
 args = parser.parse_args()
