@@ -124,14 +124,67 @@ def main(prg):
     
 import re
 from collections import defaultdict
+import networkx as nx 
+import math
 
 def on_model(model):
     hashes = defaultdict(int)
+    constants = defaultdict(int)
+    ops = {}
+    bits = 0
+    D = nx.DiGraph()
+
     for s in model.symbols(atoms=True):
         if s.name == "hash_bit":
             hashes[s.arguments[0].number] += s.arguments[2].number*2**s.arguments[1].number
-            
+        if s.name == "const_bit":
+            constants[s.arguments[0].number] += s.arguments[2].number*2**s.arguments[1].number
+        if s.name == "edge":
+            D.add_edge(s.arguments[0].number, s.arguments[1].number)
+        if s.name == "op":
+            ops[s.arguments[0].number] = s.arguments[1].name
+        if s.name == "bits":
+            bits = s.arguments[0].number
 
+    print("int phash(int key) {")
+    for node in nx.topological_sort(D, reverse = True):
+        op = str(ops[node])
+        if op == "key":
+            print("    int i%s = key;" % (node))
+        if op == "const":
+            print("    int i%s = %d;" % (node, constants[node]))
+        if op == "neg":
+            innode = D.successors(node)[0]
+            mask = 2**bits-1
+            print("    int i%s = %d & ~i%s;" % (node, mask, innode))
+        if op == "and":
+            succ = D.successors(node)
+            print("    int i%s = i%s & i%s;" % (node, succ[0], succ[1]))
+        if op == "xor":
+            succ = D.successors(node)
+            print("    int i%s = i%s ^ i%s;" % (node, succ[0], succ[1]))
+        if op == "mod":
+            succ = D.successors(node)
+            succ.sort()
+            print("    int i%s = i%s %s i%s;" % (node, succ[0], "%", succ[1]))
+        if op == "mul":
+            succ = D.successors(node)
+            succ.sort()
+            print("    int i%s = i%s * i%s;" % (node, succ[0], succ[1]))
+        if op == "sub":
+            succ = D.successors(node)
+            succ.sort()
+            print("    int i%s = i%s - i%s;" % (node, succ[0], succ[1]))
+
+        if node == 0:
+            print("    return i0;")
+
+
+
+    print("}")
     for pair in hashes.items():
         print("hash(%d) = %d" % pair)
+    #for pair in constants.items():
+    #    print("constant(%d) = %d" % pair)
+
 #end.

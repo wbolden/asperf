@@ -8,6 +8,7 @@ bit_index(0..bits-1).
 
 shift_bit_index(-bits..bits-1).
 
+
 bits(bits).
 
 shift_range(0..@logceil(bits)-1).
@@ -20,7 +21,8 @@ def logceil(k):
     return math.ceil(math.log(k,2))
 #end.
 
-id(0..6).
+#const nodes=7.
+id(0..nodes-1).
 
 rooted(0).
 rooted(B) :- rooted(A), edge(A,B).

@@ -197,7 +197,7 @@ def on_model(model):
         if s.name == "bits":
             bits = s.arguments[0].number
 
-    print("int hash(int key) {")
+    print("int phash(int key) {")
     for node in nx.topological_sort(D, reverse = True):
         op = str(ops[node])
         if op == "key":
