@@ -217,7 +217,7 @@ def on_model(model):
         if op == "shrmod":
             succ = D.successors(node)
             succ.sort()
-            mask = 2**math.floor(math.log(bits,2))-1;
+            mask = 2**math.ceil(math.log(bits,2))-1;
             print("    int i%s = i%s >> (i%s & %s);" % (node, succ[0], succ[1], mask))
 
         if node == 0:

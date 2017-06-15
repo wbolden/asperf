@@ -13,18 +13,18 @@ parser.add_argument("--template", help="a function template lp file for asperf t
 parser.add_argument("--yosys", help="generate a yosys circuit for additional operations",action="store_true")
 parser.add_argument("-b", help="number of bits per key",type=int)
 parser.add_argument("-n", help="number of operations",type=int, default=6)
+parser.add_argument("-p", help="paralell mode",type=int)
 
 
 args = parser.parse_args()
-print args.keyfile
-print args.template
+
 
 
     
 #Read keyfile
 keys = open(args.keyfile).read().splitlines()
 keys = map(int, keys)
-print keys
+
 
 #bits = ceilmax(bits in largest key, bits in number of keys)
 bits = int(math.ceil(math.log(max(len(keys), max(keys)),2)))
@@ -36,8 +36,8 @@ if args.b:
 nodes = args.n
 
 
-print bits, nodes
-
+if args.template:
+    templatepath = os.path.abspath(args.template)
 
 
 if args.yosys:
@@ -47,12 +47,12 @@ else:
 
 abspath = os.path.abspath(__file__)
 dname = os.path.dirname(abspath)+"/"+aspdir
-print "chdrid to %s" % (dname)
 os.chdir(dname)
 
 if args.yosys:
     print "Generating yosys circuits..."
-    subprocess.run(["python2", "circuit-gen.py", bits])
+    os.system("python2 circuit-gen.py %d" % (bits))
+    #subprocess.run(["python2", "circuit-gen.py", bits])
 
 
 #write out file for keys
@@ -63,7 +63,7 @@ with open('__input.lp', 'w') as file:
 cmd = ["clingo", "globals.lp", "verify.lp", "keys.lp", "__input.lp"]
 
 if args.template:
-    cmd += [args.template]
+    cmd += [templatepath]
 else:
     cmd += ["generate.lp"]
 
@@ -72,6 +72,9 @@ if args.yosys:
     cmd += ["circuit_int.lp", "circuit_lib.lp"]
 
 cmd += ["--const bits=%s --const nodes=%s" % (bits,nodes)]
+
+if args.p:
+    cmd += ["--parallel-mode %d" % (args.p)]
 
 
 os.system(" ".join(cmd))
