@@ -1,0 +1,87 @@
+\documentclass{article}
+\usepackage{fullpage,amsmath,amssymb,qtree}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+\renewcommand{\baselinestretch}{1.5}
+\title{\texttt{ASPerf}: Perfect Hashing with ASP}
+\author{Ben Sherman, Will Bolden}
+\begin{document}
+\maketitle
+
+\section{Introduction}
+% (What is your system? Who is it for? What are the primary inputs and outputs?)
+\texttt{ASPerf} is a perfect hasher implemented as an answer set program. In simple terms, given a set of values, \texttt{ASPerf} produces a function which maps every value to a different index of a minimally (or near-minimally) sized array. The applications of perfect hash function generators are seemingly few and far between, but using a perfect hash function generator theoretically makes sense when you set have a set of unchanging values which need to be hashed frequently. One example might be an interpreter for a programming language with a set of keywords; the set doesn't change and a value would be hashed per usage of each keyword.
+
+\section{Background}
+% What's the most similar thing out there? What pre-existing Real World domain does your system attach to? Which if any of the readings from the class was most relevant to your project and how?
+Hash tables using universal hash functions are among the most commonly used data structures. A universal hash function maps data, in several forms, to indices of a resizable array. Sometimes the hash function returns the same value for two different keys; this is called a collision. Universal hash functions are designed to generally avoid collisions, but they are unavoidable. Collisions can be handled by turning every element of the hash table into a bucket; when values get hashed to a bucket, you have to go through everything in the bucket until you find your key.
+
+The critical property of a perfect hash function is that it is guaranteed to be collision free. The caveat is that you need to know every key you will ever hash before you create the function, and you don't get to change your mind later. A common approach to generating perfect hash functions involves creating a function for each bucket, which maps the elements of each bucket to other indices of the array.
+
+\texttt{ASPerf} doesn't use any buckets; it produces a function using simple operations to map keys into an array in one step. Perhaps the most significant distinguishing feature of \texttt{ASPerf} is that, while most perfect hash function generators perform a search by modifying scalars with a template function, \texttt{ASPerf} is allowed to choose the operations of its function.   
+
+\section{ASP Formulation}
+%  Just give the high level design of your formulation in terms of Guess/Deduce/Forbid/Optimize. Don't mention of specific predicates or rules connecting them
+
+\subsection{ASDAG}
+The hash function itself is represented as a directed-acyclic graph (DAG). It is important to understand this structure before trying to understand the way the ASP solver reasons about the problem. This was inspired by abstract syntax trees (AST) used to represent the evaluation of recurring constructs in computer programs. An AST of the function $ax \% b$ would be:
+
+\Tree [.$\%$ [.$\times$ a x ] b ]
+
+For the sake of expressiveness with fewer nodes, we made it possible for nodes to have more than one parent. For this reason, we no longer technically have an AST, but an ASDAG. Constraints were added to make sure that the ASDAG denotes a grammatical function- i.e. that all binary operation nodes have two children, all unary operation nodes have 1 child, etc. Keys and constants are nullary nodes, i.e. leaves of the ASGAD; they are in some sense \textit{plugged in} at the bottom of the tree, and the hash value propagates to the root through the internal nodes.
+
+\subsection{High Level Design}
+
+The formulation of this problem as an answer set program can be broken down into four types of rules we give the ASP solver: guess, deduce, forbid, and optimize.
+
+\begin{itemize}
+\item{
+	Guess
+	\begin{itemize}
+		\item Create a DAG.
+		\item Depending on how many children it has, guess an operation for each node.
+		\item Guess a value for any constants in the function.
+	\end{itemize}
+}
+\item{
+	Deduce
+	\begin{itemize}
+		\item Compute a value at each node for each key given the node's operation and the value of its children.
+	\end{itemize}
+}
+\item{
+	Forbid
+	\begin{itemize}
+		\item No keys can produce the same value on the root of the DAG.
+	\end{itemize}
+}
+\item{
+	Optimize
+	\begin{itemize}
+		\item Minimize the maximum value produced  at the root over all keys.
+		\item With lower priority, minimize the number of nodes in the ASDAG.
+	\end{itemize}
+}
+\end{itemize}
+
+\subsection{Encoding Efficiently}
+The simplicity of the above description of our \textit{deduce} rules might be misleading; the bulk of the code and effort in this project went into coming up with an efficient encoding for operations. Our first attempt used a decimal representation of values. Bitwise operations worked OK for sets of a few keys, but as soon as we got close to ten keys or tried to use express the multiply operation, the search space became too large to represent reasonably. We made progress by shifting to a bit encoding; operations like multiply and modulo were integrated using gave gate level circuit descriptions in ANSprolog. The system is generally faster and scales better with the binary encoding, but higher-order binary operations take a lot of the time when used and are necessary to express good hash functions for many key-sets.
+
+\section{Results}
+%  (Describe your primary problem instance and the desired output of the system for that instance. Still don't mention specific predicates, but you might include a screenshot or code snippet of the thing that is being modeled in your instance. Mention the major parameters that describe the size of your instances and how this particular instance measures up: e.g., a Twine story with "30 passages, 10 story state variables, simulated for 15 timepoints".)
+
+Our main problem instance was to perfectly hash the two-letter abbreviations for the 59 US States + Territories. \texttt{ASPerf} doesn't currently support string hashing, so the first task was to convert the strings into 16-bit integers from their character values. The numbers we got were for the most part partitioned into similarly-valued groups. This makes the problem very difficult; it is easy to come up with a function that differentiates one such group, but very difficult to come up with one that deals with all groups.
+
+% Will, can you add the specific results here?
+
+\section{Deployment}
+%  (How does someone use what's on your website? Briefly, how is it architected / what is wrangled into what to plug ASP into the Real World data? Include a screenshot of your system in action in the currently deployed form: an interactive webpage, a downloadable command line tool, etc. If your system is was intended to be packaged in a different form than your website delivers, briefly describe the form of that ideal packaging.)
+
+\texttt{ASPerf} is an open-source command-line tool, currently available for download at \href{https://github.com/wbolden/asperf}{https://github.com/wbolden/asperf}. Instructions for installing and using the software are available at the url given.
+
+\end{document}
