@@ -1,6 +1,6 @@
 \documentclass{article}
-\usepackage{fullpage,amsmath,amssymb,qtree}
-\usepackage{hyperref}
+\usepackage{fullpage,amsmath,amssymb,qtree,graphicx,float}
+\usepackage{hyperref,listings}
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
@@ -31,7 +31,10 @@ The critical property of a perfect hash function is that it is guaranteed to be 
 \subsection{ASDAG}
 The hash function itself is represented as a directed-acyclic graph (DAG). It is important to understand this structure before trying to understand the way the ASP solver reasons about the problem. This was inspired by abstract syntax trees (AST) used to represent the evaluation of recurring constructs in computer programs. An AST of the function $ax \% b$ would be:
 
+\begin{figure}[H]
 \Tree [.$\%$ [.$\times$ a x ] b ]
+\caption{Basic AST}\label{visina8}
+\end{figure}
 
 For the sake of expressiveness with fewer nodes, we made it possible for nodes to have more than one parent. For this reason, we no longer technically have an AST, but an ASDAG. Constraints were added to make sure that the ASDAG denotes a grammatical function- i.e. that all binary operation nodes have two children, all unary operation nodes have 1 child, etc. Keys and constants are nullary nodes, i.e. leaves of the ASGAD; they are in some sense \textit{plugged in} at the bottom of the tree, and the hash value propagates to the root through the internal nodes.
 
@@ -76,6 +79,78 @@ The simplicity of the above description of our \textit{deduce} rules might be mi
 %  (Describe your primary problem instance and the desired output of the system for that instance. Still don't mention specific predicates, but you might include a screenshot or code snippet of the thing that is being modeled in your instance. Mention the major parameters that describe the size of your instances and how this particular instance measures up: e.g., a Twine story with "30 passages, 10 story state variables, simulated for 15 timepoints".)
 
 Our main problem instance was to perfectly hash the two-letter abbreviations for the 59 US States + Territories. \texttt{ASPerf} doesn't currently support string hashing, so the first task was to convert the strings into 16-bit integers from their character values. The numbers we got were for the most part partitioned into similarly-valued groups. This makes the problem very difficult; it is easy to come up with a function that differentiates one such group, but very difficult to come up with one that deals with all groups.
+
+In order to effectively hash this dataset, we actually limited our function to $ax \% b$, the same function shown in Figure 1; $a$ and $b$ are adjustable constants, while $x$ is a placeholder for the key value. All together the function is represented as a five node ASDAG. At the end of optimization, \texttt{ASPerf} is able to hash the keys into a range of values from 0 to 212. Figure 2. shows the sequence of representations for states, from strings to hash values. Figure 3. shows the C-code emitted to perform the hash function.
+
+\vspace{2cm}
+\begin{figure}[H]
+\scalebox{0.6}{
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+state & abbrev. & key & hash & state & abbrev. & key & hash & state & abbrev. & key & hash \\
+\hline
+Montana & MT & 19796 & 24&Virgin Islands & VI & 22089 & 60&Alabama & AL & 16716 & 94\\
+\hline
+Kansas & KS & 19283 & 132&Ohio & OH & 20296 & 86&Indiana & IN & 18766 & 139\\
+\hline
+Georgia & GA & 18241 & 159&North Dakota & ND & 20036 & 164&Hawaii & HI & 18505 & 182\\
+\hline
+Colorado & CO & 17231 & 56&Massachusetts & MA & 19777 & 62&Tennessee & TN & 21582 & 46\\
+\hline
+District Of Columbia & DC & 17475 & 43&West Virginia & WV & 22358 & 180&New Jersey & NJ & 20042 & 81\\
+\hline
+South Carolina & SC & 21315 & 211&Pennsylvania & PA & 20545 & 209&Oregon & OR & 20306 & 104\\
+\hline
+Delaware & DE & 17477 & 113&Arizona & AZ & 16730 & 174&Marshall Islands & MH & 19784 & 190\\
+\hline
+Missouri & MO & 19791 & 142&Wyoming & WY & 22361 & 31&Nevada & NV & 20054 & 130\\
+\hline
+Connecticut & CT & 17236 & 153&Alaska & AK & 16715 & 59&Washington & WA & 22337 & 148\\
+\hline
+California & CA & 17217 & 191&Palau & PW & 20567 & 22&Guam & GU & 18261 & 156\\
+\hline
+Utah & UT & 21844 & 38&Vermont & VT & 22100 & 74&Florida & FL & 17996 & 137\\
+\hline
+Kentucky & KY & 19289 & 49&Puerto Rico & PR & 20562 & 140&Arkansas & AR & 16722 & 11\\
+\hline
+American Samoa & AS & 16723 & 7&Iowa & IA & 18753 & 55&Wisconsin & WI & 22345 & 96\\
+\hline
+Michigan & MI & 19785 & 10&Mississippi & MS & 19795 & 28&Federated States Of Micronesia & FM & 17997 & 172\\
+\hline
+Idaho & ID & 18756 & 121&Northern Mariana Islands & MP & 19792 & 177&New York & NY & 20057 & 196\\
+\hline
+North Carolina & NC & 20035 & 168&Louisiana & LA & 19521 & 202&New Hampshire & NH & 20040 & 50\\
+\hline
+New Mexico & NM & 20045 & 147&Illinois & IL & 18764 & 69&South Dakota & SD & 21316 & 207\\
+\hline
+Texas & TX & 21592 & 64&Rhode Island & RI & 21065 & 53&Virginia & VA & 22081 & 112\\
+\hline
+Nebraska & NE & 20037 & 199&Maryland & MD & 19780 & 128&Minnesota & MN & 19790 & 107\\
+\hline
+Oklahoma & OK & 20299 & 152&Maine & ME & 19781 & 124 & & & &\\
+\hline
+\end{tabular}
+}
+\caption{Hash function results for states and territories}\label{visina8}
+
+\end{figure}
+
+\begin{figure}[H]
+\begin{lstlisting}
+#include <iostream>
+using namespace std;
+
+int phash(int key) {
+  int i2 = 215;
+  int i4 = 42351;
+  int i3 = key;
+  int i1 = 0xFFFF & (i3 * i4);
+  int i0 = i1 % i2;
+  return i0;
+}
+\end{lstlisting}
+\caption{Emitted code for hashing states}\label{visina8}
+\end{figure}
 
 % Will, can you add the specific results here?
 
