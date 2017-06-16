@@ -61,6 +61,7 @@ The formulation of this problem as an answer set program can be broken down into
 	Forbid
 	\begin{itemize}
 		\item No keys can produce the same value on the root of the DAG.
+		\item No key can produce a mod by 0.
 	\end{itemize}
 }
 \item{
@@ -73,14 +74,18 @@ The formulation of this problem as an answer set program can be broken down into
 \end{itemize}
 
 \subsection{Encoding Efficiently}
-The simplicity of the above description of our \textit{deduce} rules might be misleading; the bulk of the code and effort in this project went into coming up with an efficient encoding for operations. Our first attempt used a decimal representation of values. Bitwise operations worked OK for sets of a few keys, but as soon as we got close to ten keys or tried to use express the multiply operation, the search space became too large to represent reasonably. We made progress by shifting to a bit encoding; operations like multiply and modulo were integrated using gave gate level circuit descriptions in ANSprolog. The system is generally faster and scales better with the binary encoding, but higher-order binary operations take a lot of the time when used and are necessary to express good hash functions for many key-sets.
+The simplicity of the above description of our \textit{deduce} rules might be misleading; the bulk of the code and effort in this project went into coming up with an efficient encoding for operations. Our first attempt used a decimal representation of values. Bitwise operations worked OK for sets of a few keys, but as soon as we got close to ten keys or tried to use the multiply operation, the search space became too large to represent reasonably. We made progress by shifting to a bit encoding; operations like multiply and modulo were implemented using gate level circuit descriptions in ANSprolog. We did not create these circuits ourselves, and instead used Yosys to generate these basic the gate-level descriptions.  The system is generally faster and scales better with the binary encoding, but complex binary operations like multiply and modulo create a very large amount of grounded output, amplified by the maximum number of nodes we want to consider. 
+
+
+Unfortunately operations such as these are necessary to concisely express good hash functions in general, though in the name of efficiency we offered an alternative implementation. This implementation forwent expensive operations like modulo and multiply and instead offered a variation of a shift instruction, which theoretically could be used in conjunction with and, xor, and not to create any hash function (given enough nodes). In general this implementation does not produce as minimal results as the Yosys implementation does (for the same number of nodes), but for simpler lists of numbers that don't need the ``heavyweight'' Yosys solution it offers a good alternative.
+
 
 \section{Results}
 %  (Describe your primary problem instance and the desired output of the system for that instance. Still don't mention specific predicates, but you might include a screenshot or code snippet of the thing that is being modeled in your instance. Mention the major parameters that describe the size of your instances and how this particular instance measures up: e.g., a Twine story with "30 passages, 10 story state variables, simulated for 15 timepoints".)
 
 Our main problem instance was to perfectly hash the two-letter abbreviations for the 59 US States + Territories. \texttt{ASPerf} doesn't currently support string hashing, so the first task was to convert the strings into 16-bit integers from their character values. The numbers we got were for the most part partitioned into similarly-valued groups. This makes the problem very difficult; it is easy to come up with a function that differentiates one such group, but very difficult to come up with one that deals with all groups.
 
-In order to effectively hash this dataset, we actually limited our function to $ax \% b$, the same function shown in Figure 1; $a$ and $b$ are adjustable constants, while $x$ is a placeholder for the key value. All together the function is represented as a five node ASDAG. At the end of optimization, \texttt{ASPerf} is able to hash the keys into a range of values from 0 to 212. Figure 2. shows the sequence of representations for states, from strings to hash values. Figure 3. shows the C-code emitted to perform the hash function.
+In order to effectively hash this dataset, we actually limited our function to $ax \% b$, the same function shown in Figure 1; $a$ and $b$ are adjustable constants, while $x$ is a placeholder for the key value. All together the function is represented as a five node ASDAG. At the end of optimization, \texttt{ASPerf} is able to hash the keys into a range of values from 0 to 212. It should be noted that this is not necessarily the optimal solution, just the best solution that had been produced after almost 24 hours of runtime. Figure 2. shows the sequence of representations for states, from strings to hash values. Figure 3. shows the C-code emitted to perform the hash function.
 
 \vspace{2cm}
 \begin{figure}[H]
@@ -137,8 +142,7 @@ Oklahoma & OK & 20299 & 152&Maine & ME & 19781 & 124 & & & &\\
 
 \begin{figure}[H]
 \begin{lstlisting}
-#include <iostream>
-using namespace std;
+
 
 int phash(int key) {
   int i2 = 215;
