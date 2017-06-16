@@ -4,7 +4,9 @@ Generate perfect hash functions with ASP.
 This system uses clingo to construct perfect hash functions without buckets and with near-minimal memory overhead.
 
 ## How to use this
-Install the `Potassco`: The Potsdam Answer Set Solving Collection. Make sure that you get `clingo` version 5+ and build with python scripting support.
+Install the `Potassco`: The Potsdam Answer Set Solving Collection. Make sure that you get `clingo` version 5+ and build with python3 scripting support.
+
+If you want to use the --yosys option, make sure yosys is installed.
 
 The input file should be a list of newline delineated keys. You will get C-code as output.
 
